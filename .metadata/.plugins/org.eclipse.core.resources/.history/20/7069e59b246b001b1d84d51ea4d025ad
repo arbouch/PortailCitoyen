@@ -1,0 +1,13 @@
+package com.example.demo.UserController;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.UserModel.User;
+
+@RestController
+public class RegistrationController {
+ public void registerUser(@RequestBody User user) {
+	 
+ }
+}
