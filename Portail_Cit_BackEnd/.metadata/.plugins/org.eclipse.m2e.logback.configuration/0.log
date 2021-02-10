@@ -1,1 +1,25 @@
 2021-02-10 21:44:20,465 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2021-02-10 21:48:28,111 [Worker-8: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:Portail_Cit_BackEnd:0.0.1-SNAPSHOT @ C:\Users\acer\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\Portail_Cit_BackEnd\pom.xml.
+2021-02-10 21:48:28,123 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:Portail_Cit_BackEnd:0.0.1-SNAPSHOT @ C:\Users\acer\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\Portail_Cit_BackEnd\pom.xml.
+2021-02-10 21:48:30,650 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-10 21:48:30,650 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-02-10 21:48:30,656 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-10 21:48:30,674 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-10 21:48:30,678 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-10 21:48:30,678 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-02-10 21:48:30,678 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\acer\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\Portail_Cit_BackEnd\src\test\resources
+2021-02-10 21:48:33,380 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:Portail_Cit_BackEnd:0.0.1-SNAPSHOT @ C:\Users\acer\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\Portail_Cit_BackEnd\pom.xml.
+2021-02-10 21:48:35,629 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-10 21:48:35,630 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-02-10 21:48:35,635 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-10 21:48:35,650 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-10 21:48:35,654 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-10 21:48:35,654 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-02-10 21:48:35,654 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\acer\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\Portail_Cit_BackEnd\src\test\resources
+2021-02-10 21:48:47,312 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-10 21:48:47,313 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-02-10 21:48:47,313 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-10 21:48:47,313 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-10 21:48:47,316 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-10 21:48:47,317 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-02-10 21:48:47,317 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\acer\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\Portail_Cit_BackEnd\src\test\resources

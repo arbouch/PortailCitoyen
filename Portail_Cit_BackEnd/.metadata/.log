@@ -33,3 +33,48 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:47.087
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:47.089
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@780f20d4[org.springframework.tooling.boot.ls:1.24.0.202012131915(id=578)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:47.093
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:47.133
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.185
+!MESSAGE Boot LS startup time from start to initialized: 3083ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.280
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.qMQEFQKuisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.283
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.286
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.286
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.287
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.287
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.qMQEFQKu => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.294
+!MESSAGE classpath=99 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.297
+!MESSAGE buffering callback sts4.classpath.qMQEFQKu Portail_Cit_BackEnd false 99
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.297
+!MESSAGE executing callback sts4.classpath.qMQEFQKu 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-10 21:48:50.335
+!MESSAGE executing callback sts4.classpath.qMQEFQKu SUCCESS [done]
