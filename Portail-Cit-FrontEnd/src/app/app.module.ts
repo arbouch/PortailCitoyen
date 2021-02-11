@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccueilComponent } from './accueil/accueil.component';
+import { OTPverificationComponent } from './otpverification/otpverification.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
     AccueilComponent,
+    OTPverificationComponent,
 
   ],
   imports: [

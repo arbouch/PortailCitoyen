@@ -1,0 +1,91 @@
+package com.example.demo.UserController;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.UserModel.User;
+import com.example.demo.UserService.RegistrationService;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+
+@RestController
+public class RegistrationController {
+	private String ACCOUNT_SID = "ACfc1a5b9de06b4e46910968cab9a0048c";
+	private String AUTH_TOKEN = "e659f69e6081bc4147320b513a21ad69";
+	public static int random_double, tempotp = 0;
+	@Autowired
+	private RegistrationService service;
+
+	@PostMapping("/registerUser")
+	@CrossOrigin(origins = "http://localhost:4200")
+	public User registerUser(@RequestBody User user) throws Exception {
+		String TempemailId = user.getNumtel();
+		if (TempemailId != null && !"".equals(TempemailId)) {
+			User userobj = service.fetchUserBynumtel(TempemailId);
+			if (userobj != null) {
+				throw new Exception("user already existed ");
+			}
+		}
+		User userObj = null;
+		service.saveUser(user);
+		return userObj;
+
+	}
+
+	@PostMapping("/otp")
+	@CrossOrigin(origins = "http://localhost:4200")
+	public int getotp(@RequestBody int otp,int numtel) throws Exception {
+		tempotp = otp;
+	String	tempnumtel=numtel.toString();
+		System.out.println("ooooooooooootp" + tempotp);
+	User	userobj1 = service.fetchUserBynumtelAndotp(tempnumtel, tempotp);
+		System.out.println("gggggghghhhhhhhhhhhhhhh" + tempotp);
+
+		return tempotp;
+	}
+
+	@PostMapping("/login")
+	@CrossOrigin(origins = "http://localhost:4200")
+	public User loginUser(@RequestBody User user) throws Exception {
+		String tempnumtel = user.getNumtel();
+		int tempcin = user.getCin();
+		User userobj = null;
+		User userobj1 = null;
+
+		if (tempcin != 0 && tempnumtel != null) {
+			userobj = service.fetchUserBynumtelAndcin(tempnumtel, tempcin);
+			if (userobj != null) {
+				int min = 000001;
+				int max = 999999;
+				random_double = (int) (Math.random() * (max - min + 1) + min);
+				/*
+				 * Twilio.init(ACCOUNT_SID, AUTH_TOKEN); String
+				 * num="+216"+userobj.getNumtel().toString(); Message message = Message.creator(
+				 * new PhoneNumber(num), new PhoneNumber("+19126666588"),
+				 * String.valueOf(random_double)) // .create();
+				 * 
+				 * userobj.setOtp(random_double); service.saveUser(userobj);
+				 */
+
+				if (userobj1 == null) {
+
+				}
+			}
+
+		}
+
+		if (userobj == null) {
+			throw new Exception("user not found");
+		}
+		return userobj;
+	}
+
+}

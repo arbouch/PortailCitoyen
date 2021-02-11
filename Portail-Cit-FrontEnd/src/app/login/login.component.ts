@@ -2,7 +2,7 @@ import { User } from './../user';
 import { RegistrationService } from './../registration.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,16 +10,17 @@ import { Router } from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user = new User()
-  msg='';
-  constructor(private service :RegistrationService,private router : Router) { }
+  user = new User();
+  msg = '';
+  constructor(private service: RegistrationService,private router: Router) { }
 
   ngOnInit(): void {
   }
+  // tslint:disable-next-line: typedef
   userlogin(){
 this.service.loginUserFromRemote(this.user).subscribe(
 data=> {console.log("response received");
- this.router.navigate(['/accueil'])}
+ this.router.navigate(['/otp'])}
 
 ,error=>{console.log("exception occured");
 this.msg="veuillez vérifier les informations saisies "}

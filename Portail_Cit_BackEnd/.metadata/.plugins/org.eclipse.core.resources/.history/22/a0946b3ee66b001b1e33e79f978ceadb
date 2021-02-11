@@ -1,0 +1,7 @@
+package com.example.demo.UserService;
+
+public class TwilioServiceImpl implements TwilioService{
+	private String ACCOUNT_SID ="ACfc1a5b9de06b4e46910968cab9a0048c";
+	private String AUTH_TOKEN ="e659f69e6081bc4147320b513a21ad69";
+
+}

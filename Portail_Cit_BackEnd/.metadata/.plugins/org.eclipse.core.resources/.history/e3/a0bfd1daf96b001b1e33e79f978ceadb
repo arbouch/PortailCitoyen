@@ -1,0 +1,33 @@
+package com.example.demo.UserService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.UserModel.User;
+import com.example.demo.UserRepository.RegistrationRepository;
+
+@Service
+public class RegistrationService {
+	@Autowired
+	private RegistrationRepository repo ;
+	public User saveUser(User user) {
+		return repo.save(user);
+	}
+	public User fetchUserBynumtel(String numtel) {
+	return	repo.findBynumtel(numtel);
+	}
+	public User fetchUserBynumtelAndcin(String numtel, int cin) {
+	return	repo.findBynumtelAndCin(numtel,cin);
+	}
+	public User fetchUserBynumtelAndotp(String numtel, int otp) {
+	return	repo.findBynumtelAndCin(numtel,cin);
+	}
+	 
+	/*public int AddOTPtoUser(int otp ,String numtel) {
+		return repo.setUserOTPById(otp, numtel);
+	
+	}
+	*/
+}
