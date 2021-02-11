@@ -8,7 +8,7 @@ public class PortailCitBackEndApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PortailCitBackEndApplication.class, args);
- 
+		
 	}
 
 }

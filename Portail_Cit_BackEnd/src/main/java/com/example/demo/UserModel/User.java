@@ -6,19 +6,22 @@ import javax.persistence.Id;
 @Entity
 public class User {
 @Id
-private int id ;
 private String numtel;
+private int id ;
 private int cin;
-public User(int id, String numtel, int cin) {
+private int otp;
+public User(int id, String numtel, int cin, int otp) {
 	 
 	this.id = id;
 	this.numtel = numtel;
 	this.cin = cin;
+	this.otp=otp;
 }
 public User( ) {
 	 
 	 
 }
+
 public int getId() {
 	return id;
 }
@@ -36,6 +39,12 @@ public int getCin() {
 }
 public void setCin(int cin) {
 	this.cin = cin;
+}
+public int getOtp() {
+	return otp;
+}
+public void setOtp(int otp) {
+	this.otp = otp;
 }
 
 
