@@ -10,21 +10,23 @@ import { Router } from '@angular/router';
 })
 export class OTPverificationComponent implements OnInit {
 
-  // tslint:disable-next-line: typedef-whitespace
-  constructor(private service: RegistrationService, private router : Router) { }
+   constructor(private service: RegistrationService, private router : Router) { }
   msg='';
   numtel=0;
    otp=0;
    user = new User();
-
+sessionvalue :String="";
   ngOnInit(): void {
-  }
-  // tslint:disable-next-line: typedef
-  sendotp(){
+this.sessionvalue=sessionStorage.getItem("numtel")
+if (this.sessionvalue==null) {
+  this.router.navigate(['/']); }
+
+}
+
+   sendotp(){
     this.service.SendOtp(this.user).subscribe(
     data=> {console.log('response received');
-     // tslint:disable-next-line: align
-     this.router.navigate(['/accueil']); }
+      this.router.navigate(['/accueil']); }
 
     ,error=>{console.log("exception occured");
     this.msg="veuillez vérifier les informations saisies ";}

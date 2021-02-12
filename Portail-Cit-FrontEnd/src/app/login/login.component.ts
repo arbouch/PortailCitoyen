@@ -20,7 +20,10 @@ export class LoginComponent implements OnInit {
   userlogin(){
 this.service.loginUserFromRemote(this.user).subscribe(
 data=> {console.log("response received");
- this.router.navigate(['/otp'])}
+ this.router.navigate(['/otp'])
+ sessionStorage.setItem("numtel",this.user.numtel.toString())
+
+}
 
 ,error=>{console.log("exception occured");
 this.msg="veuillez vérifier les informations saisies "}
