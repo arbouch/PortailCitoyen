@@ -1,3 +1,4 @@
+import { Otp } from './../otp';
 import { User } from './../user';
 import { RegistrationService } from './../registration.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   user = new User();
-  msg = '';
+   msg = '';
   constructor(private service: RegistrationService,private router: Router) { }
 
   ngOnInit(): void {
@@ -22,6 +23,8 @@ this.service.loginUserFromRemote(this.user).subscribe(
 data=> {console.log("response received");
  this.router.navigate(['/otp'])
  sessionStorage.setItem("numtel",this.user.numtel.toString())
+ localStorage.setItem("cin",this.user.cin.toString());
+
 
 }
 

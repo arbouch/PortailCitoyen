@@ -1,0 +1,214 @@
+<nav  class="navbar navbar-expand-sm bg-dark navbar-dark ">
+  <ul class="navbar-nav ">
+    <li class="nav-item active">
+       <a class="nav-link" [routerLink]="['accueil']">Accueil</a>
+
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['detailscitoyens']">Details citoyen</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " [routerLink]="['categorie']">A propos</a>
+    </li>
+  </ul>
+</nav>
+<div style="margin-bottom: 15px; height: 50%;" >
+<div class="card text-center">
+   <div class="card-body">
+    <h5 class="card-title">Qu'est-ce que vous cherchez ?</h5>
+    <div>
+      <img src="../../assets/imageang/img4.svg" style="height: 20%; width: 30%; ">
+    </div>
+    <p class="card-text">Veuillez choisir les données que vous chercher</p>
+    <button
+      (click)="donnespersaff()"
+      class="btn btn-primary"
+      style="margin: 15px"
+    >
+    Données personnelles
+    </button>
+    <button
+      (click)="actedenaissancesaff()"
+      class="btn btn-primary"
+      style="margin: 15px"
+    >
+
+    Acte de naissance
+    </button>
+    <button
+      (click)="adressedeclareeaff()"
+      class="btn btn-primary"
+      style="margin: 15px"
+    >
+      Adresse déclarée
+    </button>
+    <button
+      (click)="actededecesaff()"
+      class="btn btn-primary"
+      style="margin: 15px"
+    >
+    Acte de décès
+    </button>
+  </div>
+
+ </div>
+</div>
+  <table class="table table-dark" *ngIf="dnpers" >
+  <tr>
+    <th>UIC</th>
+    <th>nom</th>
+    <th>prenom</th>
+    <th>Prénom du père</th>
+    <th>Prénom du grand-père paternel</th>
+    <th>Nom de la mère</th>
+    <th>Prénom de la mère</th>
+    <th>Date de naissance</th>
+    <th>Sexe</th>
+  </tr>
+  <tr >
+    <td>
+      {{ citoyen?.iuc }}
+    </td>
+
+    <td>
+      {{ citoyen?.nom }}
+    </td>
+    <td>
+      {{ citoyen?.prenom }}
+    </td>
+    <td>
+      {{ citoyen?.prenom_pere }}
+    </td>
+    <td>
+      {{ citoyen?.prenom_grandpere }}
+    </td>
+    <td>
+      {{ citoyen?.nom_mere }}
+    </td>
+    <td>
+      {{ citoyen?.prenom_mere }}
+    </td>
+    <td>
+      {{ citoyen?.date_de_naissance }}
+    </td>
+    <td>
+      {{ citoyen?.sexe }}
+    </td>
+  </tr>
+</table>
+
+<table class="table table-dark" *ngIf="actenaiss">
+  <tr>
+     <th>Commune de naissance</th>
+    <th>Arrondissement de naissance</th>
+    <th>Numéro acte de naissance</th>
+    <th>Année de naissance</th>
+    <th>Numéro de la carte d’identité nationale</th>
+    <th>Situation familiale</th>
+    <th>Date de la situation familiale</th>
+    <th>IUC du conjoint</th>
+    <th>IUC du père</th>
+    <th>IUC de la mère</th>
+    <th>Date de décès</th>
+
+  </tr>
+  <tr>
+    <td>
+      {{ citoyen?.commune_de_naissance}}
+    </td>
+
+    <td>
+      {{ citoyen?.arrondissement_de_naissance }}
+    </td>
+    <td>
+      {{ citoyen?.annee_de_naissance }}
+    </td>
+    <td>
+      {{ citoyen?.numero_acte_de_naissance }}
+    </td>
+    <td>
+      {{ citoyen?.cin }}
+    </td>
+    <td>
+      {{ citoyen?.situation_familiale }}
+    </td>
+    <td>
+      {{ citoyen?.date_de_la_situation_familiale }}
+    </td>
+    <td>
+      {{ citoyen?.iuc_du_conjoint }}
+    </td>
+    <td>
+      {{ citoyen?.iuc_du_pere }}
+    </td>
+    <td>
+      {{ citoyen?.iuc_de_la_mere }}
+    </td>
+    <td>
+      {{ citoyen?.date_de_deces }}
+    </td>
+  </tr>
+</table>
+<table class="table table-dark" *ngIf="actedeces">
+  <tr>
+     <th>Commune de décès</th>
+    <th>Année acte de décès</th>
+    <th>Arrondissement décès</th>
+    <th>Numéro acte de décès</th>
+
+
+  </tr>
+  <tr>
+    <td>
+      {{ citoyen?.commune_de_deces}}
+    </td>
+
+    <td>
+      {{ citoyen?.annee_acte_de_deces }}
+    </td>
+    <td>
+      {{ citoyen?.arrondissement_deces }}
+    </td>
+    <td>
+      {{ citoyen?.numero_acte_de_deces }}
+    </td>
+
+  </tr>
+</table>
+
+<table class="table table-dark" *ngIf="dnaddr">
+  <tr>
+     <th>Gouvernorat de l’adress</th>
+    <th>
+      Délégation adresse
+      </th>
+    <th>Localité adresse</th>
+    <th>Adresse déclarée</th>
+    <th>Code postale</th>
+
+  </tr>
+  <tr>
+    <td>
+      {{citoyen?.gouvernorat.gouvernorat}}
+    </td>
+
+    <td>
+      {{ citoyen?.delegation.delegation }}
+    </td>
+    <td>
+      {{ citoyen?.localite.localite}}
+    </td>
+    <td>
+      {{ citoyen?.adresse }}
+    </td>
+    {{ citoyen?.code_postal }}
+
+    <td>
+
+    </td>
+
+  </tr>
+</table>
+
+

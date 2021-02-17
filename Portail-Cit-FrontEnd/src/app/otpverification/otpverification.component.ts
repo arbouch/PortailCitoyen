@@ -15,15 +15,21 @@ export class OTPverificationComponent implements OnInit {
   numtel=0;
    otp=0;
    user = new User();
+
 sessionvalue :String="";
-  ngOnInit(): void {
+localvalue :number=0;
+
+   ngOnInit(): void {
 this.sessionvalue=sessionStorage.getItem("numtel")
+//this.cindeclared=sessionStorage.getItem("cin")
+
 if (this.sessionvalue==null) {
   this.router.navigate(['/']); }
 
 }
 
    sendotp(){
+    this.user.numtel=this.sessionvalue
     this.service.SendOtp(this.user).subscribe(
     data=> {console.log('response received');
       this.router.navigate(['/accueil']); }
