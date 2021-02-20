@@ -33,7 +33,7 @@ if (this.sessionvalue==null) {
     this.user.numtel=this.sessionvalue
     this.service.SendOtp(this.user).subscribe(
     data=> {console.log('response received');
-      this.router.navigate(['/accueil']); }
+      this.router.navigate(['/detailscitoyens']); }
 
     ,error=>{console.log("exception occured");
     this.msg="veuillez vérifier les informations saisies ";}
