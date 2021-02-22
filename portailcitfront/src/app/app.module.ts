@@ -10,6 +10,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { OTPverificationComponent } from './otpverification/otpverification.component';
 import { CitoyendetailComponent } from './citoyendetail/citoyendetail.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
+import { MesReclamationComponent } from './reclamation/mes-reclamation/mes-reclamation.component';
+import { AjoutReclamationComponent } from './reclamation/ajout-reclamation/ajout-reclamation.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { CitoyendetailComponent } from './citoyendetail/citoyendetail.component'
     RegistrationComponent,
     AccueilComponent,
     OTPverificationComponent,
-    CitoyendetailComponent
+    CitoyendetailComponent,
+    ReclamationComponent,
+    MesReclamationComponent,
+    AjoutReclamationComponent
   ],
   imports: [
     BrowserModule,
