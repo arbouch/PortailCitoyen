@@ -1,0 +1,44 @@
+<nav  class="navbar navbar-expand-sm bg-dark navbar-dark ">
+  <ul class="navbar-nav ">
+    <li class="nav-item active">
+       <a class="nav-link" [routerLink]="['accueil']">Accueil</a>
+
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['detailscitoyens']">Details citoyen</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " [routerLink]="['mesreclamation']">A propos</a>
+    </li>
+  </ul>
+</nav>
+
+  <table class="table table-striped" >
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date D'utilisation</th>
+      <th scope="col">Utilisation</th>
+      <th scope="col">Données Utilisées</th>
+      <th scope="col">Site</th>
+
+
+  <tr  *ngFor="let uticitsite of uticitsites ; index as i"  >
+    <th scope="row">{{ i + 1 }}</th>
+
+    <td >
+     {{ uticitsite?.date_utilisation }}
+    </td>
+    <td >
+      {{ uticitsite?.utilisation_site.libelle_utilisation }}
+     </td>
+     <td >
+      {{ uticitsite?.donnes_utilisees }}
+     </td>
+     <td >
+      {{ uticitsite?.site.nom_site }}
+     </td>
+  </tr>
+</table>
+<button>Signaler une utilisation frauduleuse</button>
+
