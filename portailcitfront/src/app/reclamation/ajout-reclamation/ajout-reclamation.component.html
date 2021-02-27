@@ -1,10 +1,25 @@
+<nav  class="navbar navbar-expand-sm bg-dark navbar-dark ">
+  <ul class="navbar-nav ">
+    <li class="nav-item active">
+       <a class="nav-link" [routerLink]="['accueil']">Accueil</a>
+
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['detailscitoyens']">Details citoyen</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " [routerLink]="['mesreclamation']">A propos</a>
+    </li>
+  </ul>
+</nav>
 <div class="container">
   <div class="row">
 <div class="col-md-8">
-<img  src="./../../../assets/imageang/img1.jpg"  style="height: 80%; margin-top: 23px;">
+<img  src="./../../../assets/imageang/img5.svg"  style="height: 80%; margin-top: 23px;">
 </div>
 <div class="col-md-4" style="text-align: center;  margin-top: 60px;">
-  <img  src="../../assets/imageang/img3.svg" style="width: 80%;">
+  <img  src="../../assets/imageang/reclamation.webp" style="width: 80%;">
 <div class="container">
    <form #form="ngForm" (ngSubmit)="addreclamation()" style="width: 100%; margin: 0 auto;">
 
@@ -12,9 +27,10 @@
 
     <div class="form-group" style="margin-top: 20px;">
       <label for="reclamation"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre reclamation</label>
-      <input required  type="text" class="form-control"  name="reclamations" [(ngModel)]="reclamationfromform.reclamations ">
+      <input  required  style="height: 100px;" class="form-control"  name="reclamations" [(ngModel)]="reclamationfromform.reclamations">
+
     </div>
-    <button type="submit" class="btn btn-info" style="width: 100%">Verifier</button>
+    <button type="submit" class="btn btn-info" style="width: 100%">Ajouter</button>
   </form>
 
 </div>
