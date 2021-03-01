@@ -7,6 +7,7 @@ import { OTPverificationComponent } from './otpverification/otpverification.comp
 import { AccueilComponent } from './accueil/accueil.component';
 import { CitoyendetailComponent } from './citoyendetail/citoyendetail.component';
 import { UtilisationSiteCitComponent } from './utilisation-site-cit/utilisation-site-cit.component';
+import { SignaleComponent } from './signale/signale.component';
 
 const routes: Routes = [
   {path :'',component:LoginComponent},
@@ -15,9 +16,11 @@ const routes: Routes = [
   {path :'detailscitoyens',component:CitoyendetailComponent},
   {path :'mesreclamation',component:MesReclamationComponent},
   {path :'ajouterreclamation',component:AjoutReclamationComponent},
-  {path :'utilisation_site_cit',component:UtilisationSiteCitComponent}
+  {path :'utilisation_site_cit',component:UtilisationSiteCitComponent},
+  {path :'messignale',component:SignaleComponent}
 
-   
+
+
 
 ];
 

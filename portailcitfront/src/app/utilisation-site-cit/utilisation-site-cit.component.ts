@@ -28,29 +28,15 @@ export class UtilisationSiteCitComponent implements OnInit {
 
   public SendSignal(id_util_site_cit : number):void{
 
-    console.log("hhhhhhhhhhhhhhhhhh"+ id_util_site_cit)
        this.service.AddSignal(id_util_site_cit).subscribe(
         data=> {console.log('response received');
             }
 
         ,error=>{console.log("exception occured");
-        //console.log(this.reclamationfromform.citoyen);
-        //this.msg="veuillez vérifier les informations saisies ";
       }
         );
 
           }
-
-
-
-
-
-
-
-
-
-
-
 
    public getuti_cit_site(cintemp : string):void{
 
