@@ -15,6 +15,7 @@ import { MesReclamationComponent } from './reclamation/mes-reclamation/mes-recla
 import { AjoutReclamationComponent } from './reclamation/ajout-reclamation/ajout-reclamation.component';
 import { UtilisationSiteCitComponent } from './utilisation-site-cit/utilisation-site-cit.component';
 import { SignaleComponent } from './signale/signale.component';
+import { UpdatecitoyenComponent } from './updatecitoyen/updatecitoyen.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SignaleComponent } from './signale/signale.component';
     MesReclamationComponent,
     AjoutReclamationComponent,
     UtilisationSiteCitComponent,
-    SignaleComponent
+    SignaleComponent,
+    UpdatecitoyenComponent
   ],
   imports: [
     BrowserModule,

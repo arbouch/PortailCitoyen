@@ -27,9 +27,6 @@ export class AjoutReclamationComponent implements OnInit {
   }
   public addreclamation():void{
 
-console.log(this.sessionvalue);
-//this.reclamationfromform.citoyen=this.sessionvalue;
-console.log(this.reclamationfromform.citoyen+"citoyen from angular");
 var bothVar = {'value1': this.sessionvalue, 'value2': this.reclamationfromform.reclamations};
 
     this.service.AddReclamation(bothVar).subscribe(

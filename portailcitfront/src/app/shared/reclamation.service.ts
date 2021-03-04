@@ -10,7 +10,6 @@ export class ReclamationService {
 
   constructor(private http:HttpClient) { }
   public getreclamationbycin(cintemp: string):Observable<Reclamation[]>{
-    console.log("ciiiiiiiiiiiiiiiiin"+cintemp);
 
     return this.http.get<Reclamation[]>("http://localhost:81/reclamation/detail/"+cintemp)
   }

@@ -1,3 +1,4 @@
+import { UpdatecitoyenComponent } from './updatecitoyen/updatecitoyen.component';
 import { AjoutReclamationComponent } from './reclamation/ajout-reclamation/ajout-reclamation.component';
 import { MesReclamationComponent } from './reclamation/mes-reclamation/mes-reclamation.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,9 @@ const routes: Routes = [
   {path :'mesreclamation',component:MesReclamationComponent},
   {path :'ajouterreclamation',component:AjoutReclamationComponent},
   {path :'utilisation_site_cit',component:UtilisationSiteCitComponent},
-  {path :'messignale',component:SignaleComponent}
+  {path :'messignale',component:SignaleComponent},
+  {path :'update',component:UpdatecitoyenComponent},
+
 
 
 

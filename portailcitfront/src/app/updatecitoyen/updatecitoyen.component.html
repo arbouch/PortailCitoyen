@@ -1,0 +1,70 @@
+<nav  class="navbar navbar-expand-sm bg-dark navbar-dark ">
+  <ul class="navbar-nav ">
+    <li class="nav-item active">
+       <a class="nav-link" [routerLink]="['accueil']">Accueil</a>
+
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['detailscitoyens']">Details citoyen</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " [routerLink]="['mesreclamation']">A propos</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <div class="row">
+<div class="col-md-8">
+<img  src="./../../../assets/imageang/img5.svg"  style="height: 80%; margin-top: 23px;">
+</div>
+<div class="col-md-4" style="text-align: center;  margin-top: 60px;">
+  <img  src="../../assets/imageang/reclamation.webp" style="width: 80%;">
+<div class="container">
+   <form #form="ngForm" (ngSubmit)="UpdateCitoyen()" style="width: 100%; margin: 0 auto;">
+
+<small class="text-danger">{{msg}}</small>
+
+
+    <div class="form-group" style="margin-top: 20px;">
+
+      <label for="updatebumtel"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre Num tel</label>
+      <input      class="form-control"  name="numtel" [(ngModel)]="updatecitoyenform.newnumtel">
+
+      <label for="updateemail"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre Email</label>
+      <input    type="email"   class="form-control"  name="email" [(ngModel)]="updatecitoyenform.newemail">
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Example select</label>
+        <select (change)="selectOption($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+          <option value="tunis" >tunis</option>
+          <option value="Ariena">Ariena</option>
+          <option value="tunis">3</option>
+          <option value="tunis">4</option>
+          <option value="tunis">5</option>
+        </select>
+      </div>
+
+
+        <label for="updategov"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre Gouvernorat</label>
+      <input      class="form-control"  name="gouvernorat" [(ngModel)]="updatecitoyenform.newgouvernorat">
+      <label for="updateloc"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre Localité</label>
+      <input      class="form-control"  name="localite" [(ngModel)]="updatecitoyenform.newlocalite">
+      <label for="reclamation"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre Delegation</label>
+      <input     class="form-control"  name="reclamations" [(ngModel)]="updatecitoyenform.newdelegation">
+
+      <label for="reclamation"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre Adresse</label>
+      <input      class="form-control"  name="reclamations" [(ngModel)]="updatecitoyenform.newadresse">
+      <label for="reclamation"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre Zip Code</label>
+      <input      class="form-control"  name="reclamations" [(ngModel)]="updatecitoyenform.newzip">
+
+
+    </div>
+    <button type="submit" class="btn btn-info" style="width: 100%">Ajouter</button>
+  </form>
+
+</div>
+
+
+</div>
+</div>

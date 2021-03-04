@@ -28,6 +28,7 @@ export class Citoyen {
   cin: number;
   numero_acte_de_naissance: number;
   code_postal: number;
-
+  email : string;
+  numtel: string;
   constructor() {}
 }
