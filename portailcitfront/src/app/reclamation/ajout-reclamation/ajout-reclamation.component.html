@@ -26,7 +26,10 @@
 <small class="text-danger">{{msg}}</small>
 
     <div class="form-group" style="margin-top: 20px;">
-      <label for="reclamation"  style="float: left ; margin-top: 20px; font-weight:bold;" >Ecrivez votre reclamation</label>
+      <label for="reclamation"  style="float: left ; margin-top: 20px; font-weight:bold;" >Information a modifier</label>
+      <input  required  style="height: 100px;" class="form-control"  name="reclamations" [(ngModel)]="reclamationfromform.attribut">
+
+      <label for="reclamation"  style="float: left ; margin-top: 20px; font-weight:bold;" >Nouvelle Information</label>
       <input  required  style="height: 100px;" class="form-control"  name="reclamations" [(ngModel)]="reclamationfromform.reclamations">
 
     </div>

@@ -13,8 +13,8 @@ export class ReclamationService {
 
     return this.http.get<Reclamation[]>("http://localhost:81/reclamation/detail/"+cintemp)
   }
-  public AddReclamation(bothVar):Observable<any> {
+  public AddReclamation(bothVar,cin):Observable<any> {
 
-    return this.http.post<any>("http://localhost:81/reclamation/addreclamation/",bothVar)
+    return this.http.post<any>("http://localhost:81/reclamation/addreclamation/"+cin,bothVar)
   }
 }

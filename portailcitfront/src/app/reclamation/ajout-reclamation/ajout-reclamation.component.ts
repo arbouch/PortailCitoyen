@@ -12,12 +12,12 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./ajout-reclamation.component.css']
 })
 export class AjoutReclamationComponent implements OnInit {
-  public reclamation: Reclamation;
-  public reclamations: Reclamation[];
+   public reclamations: Reclamation[];
   msg : string = "";
   public citoyen: Citoyen;
   cintemp : string="";
   sessionvalue :String="";
+  public reclamation = new Reclamation();
   reclamationfromform = new Reclamation();
   constructor(public service: ReclamationService,private router: Router,private http:HttpClient) { }
 
@@ -26,10 +26,11 @@ export class AjoutReclamationComponent implements OnInit {
 
   }
   public addreclamation():void{
+this.reclamation.attribut=this.reclamationfromform.attribut;
+this.reclamation.reclamations=this.reclamationfromform.reclamations;
+var bothVar = {'value1': this.reclamationfromform.attribut, 'value2': this.reclamationfromform.reclamations};
 
-var bothVar = {'value1': this.sessionvalue, 'value2': this.reclamationfromform.reclamations};
-
-    this.service.AddReclamation(bothVar).subscribe(
+    this.service.AddReclamation(bothVar,this.sessionvalue).subscribe(
     data=> {console.log('response received');
         }
 
