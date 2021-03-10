@@ -25,14 +25,18 @@ export class AjoutReclamationComponent implements OnInit {
     this.sessionvalue=localStorage.getItem("cin")
 
   }
+  public selectOption(event){
+console.log(event);
+this.reclamationfromform.attribut=event;
+  }
   public addreclamation():void{
-this.reclamation.attribut=this.reclamationfromform.attribut;
-this.reclamation.reclamations=this.reclamationfromform.reclamations;
 var bothVar = {'value1': this.reclamationfromform.attribut, 'value2': this.reclamationfromform.reclamations};
-
+if(confirm("Voulez vous vraiment envoyer cette reclamation ?  "))
     this.service.AddReclamation(bothVar,this.sessionvalue).subscribe(
     data=> {console.log('response received');
+
         }
+
 
     ,error=>{console.log("exception occured");
     console.log(this.reclamationfromform.citoyen);

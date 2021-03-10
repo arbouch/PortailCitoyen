@@ -27,6 +27,7 @@ export class UtilisationSiteCitComponent implements OnInit {
 
 
   public SendSignal(id_util_site_cit : number):void{
+    if(confirm("Voulez vous vraiment signaler cette manipulation ?  "))
 
        this.service.AddSignal(id_util_site_cit).subscribe(
         data=> {console.log('response received');
