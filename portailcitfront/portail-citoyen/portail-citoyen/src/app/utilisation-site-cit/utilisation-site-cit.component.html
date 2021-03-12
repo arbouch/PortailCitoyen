@@ -1,0 +1,99 @@
+
+<style>
+  .table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table td,.table th{
+  padding:12px 15px;
+  border:1px solid #ddd;
+  text-align: center;
+  font-size:16px;
+}
+
+.table th{
+	background-color: cadetblue;
+	color:#ffffff;
+}
+
+.table tbody tr:nth-child(even){
+	background-color: #f5f5f5;
+}
+
+  
+/*responsive*/
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+</style>
+<h1 style="margin-top: 90px ; color: palegreen;">Liste Des Manipulations de vos Données</h1>
+
+  <table class="table"  >
+
+    <thead>
+       <th >Id Manipulation</th>
+      <th >Date D'utilisation</th>
+      <th >Utilisation</th>
+      <th >Données Utilisées</th>
+      <th >Site</th>
+      <th >Action</th>
+
+    </thead>
+    <tbody>
+  <tr  *ngFor="let uticitsite of uticitsites ; index as i"  >
+     <td >
+      {{ uticitsite?.id_util_site_cit }}
+     </td>
+    <td >
+     {{ uticitsite?.date_utilisation }}
+    </td>
+
+    <td >
+      {{ uticitsite?.utilisation_site.libelle_utilisation }}
+     </td>
+     <td >
+      {{ uticitsite?.donnes_utilisees }}
+     </td>
+     <td >
+      {{ uticitsite?.site.nom_site }}
+     </td>
+     <td>
+      <button type="button" class="btn btn-danger" (click)="sendss(uticitsite.id_util_site_cit )">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-diamond-fill" viewBox="0 0 16 16" >
+  <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+  </svg>
+        Signaler une manipulation frauduleuse
+      </button>
+
+    </td>
+  </tr>     </tbody>
+</table>
+

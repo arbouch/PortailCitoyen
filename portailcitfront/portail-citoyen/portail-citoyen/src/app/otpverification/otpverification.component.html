@@ -1,0 +1,27 @@
+
+<div style="  position: absolute;
+top: 50%;
+left: 50%;
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);">
+<div class="container">
+  <div class="row">
+ 
+<div >
+  <img  src="../../assets/imageang/img3.svg" style="width: 70%; margin-top: 90px;">
+<div class="container">
+   <form #loginform="ngForm" (ngSubmit)="sendotp()" style="width: 100%; margin: 0 auto;">
+
+<small class="text-danger">{{msg}}</small>
+
+    <div class="form-group" style="margin-top: 20px;">
+      <label for="otp"  style="float: left ; margin-top: 20px; font-weight:bold;" >Veuillez entrer le code reçu par sms</label>
+      <input type="number" class="form-control"    placeholder="999999" name="otp" [(ngModel)]="user.otp">
+    </div>
+    <button type="submit" class="btn btn-primary" style="width: 100%">Verifier</button>
+  </form>
+</div>
+</div>
+</div>
+</div>
