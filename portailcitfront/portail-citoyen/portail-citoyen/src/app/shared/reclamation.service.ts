@@ -17,4 +17,13 @@ export class ReclamationService {
 
     return this.http.post<any>("http://localhost:81/reclamation/addreclamation/"+cin,bothVar)
   }
+  public Verifier(codetest):Observable<String> {
+
+    return this.http.post<String>("http://localhost:81/reclamation/verification/"+codetest,{})
+  }
+  public SendNumber(numstored):Observable<String> {
+
+    return this.http.post<String>("http://localhost:81/reclamation/getnumber/",numstored)
+  }
+
 }

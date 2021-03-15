@@ -1,6 +1,8 @@
 export class Reclamation {
   reclamations: String;
   citoyen: any;
-  attribut:string
+  attribut:string;
+  code:string
+
  constructor() {}
 }

@@ -7,8 +7,8 @@ export class Updatecitoyen {
   newlocalite:string;
   newemail:string;
   newadresse:string;
-  newzip:number
-
+  newzip:number;
+  code:string
 
 constructor() {}
 }

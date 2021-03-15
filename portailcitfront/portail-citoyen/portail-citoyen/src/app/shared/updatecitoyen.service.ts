@@ -12,5 +12,14 @@ export class UpdatecitoyenService {
 
     return this.http.post<any>("http://localhost:81/citoyen/update/"+cin,bothVar)
   }
+  public Verifier(codetest):Observable<String> {
+
+    return this.http.post<String>("http://localhost:81/citoyen/verification/"+codetest,{})
+  }
+  public SendNumber(numstored):Observable<String> {
+
+    return this.http.post<String>("http://localhost:81/citoyen/getnumber/",numstored)
+  }
+
 
 }

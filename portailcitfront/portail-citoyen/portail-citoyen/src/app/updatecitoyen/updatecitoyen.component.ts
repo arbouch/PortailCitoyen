@@ -15,12 +15,16 @@ export class UpdatecitoyenComponent implements OnInit {
   public updatecitoyens: Updatecitoyen[];
   sessionvalue :String="";
   msg:string="";
+  codetest :string="";
+  numstored :String="";
   input_adresse : boolean=false;
   input_email : boolean=false;
   input_numtel : boolean=false;
   public Delegation = [];
   public Localite = [];
   public Zipcode = [];
+  showMsg: boolean = false;
+  afficherinputverification:boolean=false;
 
 
   public updatecitoyenform = new Updatecitoyen();
@@ -29,6 +33,7 @@ public citoyen = new Citoyen();
 
   ngOnInit(): void {
     this.sessionvalue=localStorage.getItem("cin");
+    this.numstored=sessionStorage.getItem("numtel")
 
   }
   update_numtel() {
@@ -156,5 +161,36 @@ if(this.updatecitoyenform.newnumtel!=null){
     );
 
       }
+      public EnvoyerCode():void{
+       
+        console.log(  "this is the number"+this.codetest.toString())
+
+        this.service.SendNumber(this.numstored.toString()).subscribe(
+          data=> {console.log('response received');
+              }
+          ,error=>{console.log("exception occured");
+           this.msg="veuillez vérifier les informations saisies ";}
+          );
+      this.afficherinputverification=true;
+        
+              }
+              public Verifier():void{
+              //  this.codetest="978145"
+                this.codetest=this.updatecitoyenform.code
+                console.log(  "this is the number"+this.codetest.toString())
+         
+                this.service.Verifier(this.codetest.toString()).subscribe(
+                  data=> {console.log('response received');
+                  return this.UpdateCitoyen()
+                  this.showMsg= true;
+
+                  
+                      }
+                  ,error=>{console.log("exception occured");
+                   this.msg="veuillez vérifier les informations saisies ";}
+                  );
+                
+                      }
+   
 
 }
