@@ -1,0 +1,51 @@
+<ngb-alert *ngIf="erreur" style="background-color:#f55549"  _ngcontent-c5="" class="alert alert-danger" role="alert">
+  <div _ngcontent-c5="" class="container"><div _ngcontent-c5="" class="alert-wrapper">
+     <div _ngcontent-c5="" class="message">
+      <div _ngcontent-c5="" class="alert-icon">
+      <i _ngcontent-c5="" class="now-ui-icons ui-1_bell-53"></i></div>
+  <strong _ngcontent-c5="">Erreur </strong>veuillez vérifier les coordonnées saisies</div></div></div></ngb-alert>
+<div class="card card-login card-plain" style="margin-top: 50px;">
+  <form ngNativeValidate class="form" #form="ngForm" (ngSubmit)="userlogin()">
+    <div *ngIf="showspinner" class="d-flex justify-content-center"> 
+      <div class="spinner-border" role="status"> 
+          <span class="sr-only" id="loading"></span> 
+      </div> 
+  </div> 
+      <div class="header header-primary text-center">
+          <div class="category">
+              <img src="../../assets/imageang/img2.jpg" style ="width:20%; height:20%;" >
+          </div>
+      </div>
+      <h5 >Numéro de Téléphone:</h5>
+
+      <div class="content">
+
+        <div class="input-group form-group-no-border input-lg" >
+
+          <div class="input-group-prepend">
+              <span class="input-group-text">  <i class="now-ui-icons tech_mobile"></i></span>
+         
+            </div>
+            <input required   type="number" class="form-control"  placeholder="99000111" name="numtel" [(ngModel)]="user.numtel">
+
+        </div>
+        
+        <h5 for="reclamation" >Numero carte d'identité :</h5>
+
+        <div class="input-group form-group-no-border input-lg" >
+          
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+          </div>
+          <input   required type="number" class="form-control"  placeholder="12345678" name="cin" [(ngModel)]="user.cin">
+        </div>
+      </div>
+      <div class="footer text-center">
+          <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Login </button>
+      </div>
+    
+      
+  </form>
+</div>
+
+
