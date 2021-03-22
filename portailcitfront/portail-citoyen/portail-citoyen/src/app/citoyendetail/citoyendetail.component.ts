@@ -18,6 +18,8 @@ export class CitoyendetailComponent implements OnInit {
     actenaiss : boolean=false;
     actedeces : boolean=false;
     dnaddr : boolean=false;
+    erreur : boolean=false;
+    showspinner : boolean;
 
     cin : string="";
   cintemp : string="";
@@ -64,11 +66,21 @@ export class CitoyendetailComponent implements OnInit {
       )
     }
     public getcitoyen(cintemp : string):void {
+      this.showspinner=true; 
 
       this.service.getcitoyenbycin(cintemp).subscribe(
           (response:Citoyen) => {
+            if (response) { 
+              this.showspinner=false; 
+          } 
             this.citoyen=response;
           }
+          ,error=>{console.log("exception occured"); this.showspinner=false;
+          this.erreur=true;
+
+     
+   }
+   
       )
     }
 

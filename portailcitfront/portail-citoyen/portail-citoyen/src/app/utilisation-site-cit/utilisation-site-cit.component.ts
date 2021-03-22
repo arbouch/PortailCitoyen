@@ -18,12 +18,20 @@ export class UtilisationSiteCitComponent implements OnInit {
   public uticitsite: UtiCitSite;
   public uticitsites: UtiCitSite[];
   public citoyen: Citoyen;
+  p:number=1;
   cintemp : string="";
+  numstored : string="";
+
   constructor(public service: UtiCitSiteService,private router: Router,private http:HttpClient) { }
  
   ngOnInit(): void {
     this.cintemp=localStorage.getItem("cin")
-    this.getuti_cit_site(this.cintemp);
+     this.numstored=sessionStorage.getItem("numtel")
+    if ((this.numstored=="null")&&(this.cintemp=="null")) 
+      this.router.navigate(['/']);
+   
+    else 
+   this.getuti_cit_site(this.cintemp);
 
   }
 

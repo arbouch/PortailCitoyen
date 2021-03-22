@@ -21,6 +21,8 @@ import { AjoutReclamationComponent } from './reclamation/ajout-reclamation/ajout
 import { UtilisationSiteCitComponent } from './utilisation-site-cit/utilisation-site-cit.component';
 import { SignaleComponent } from './signale/signale.component';
 import { UpdatecitoyenComponent } from './updatecitoyen/updatecitoyen.component';
+import { NgxPaginationModule } from "ngx-pagination";
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
     declarations: [
@@ -46,7 +48,7 @@ import { UpdatecitoyenComponent } from './updatecitoyen/updatecitoyen.component'
         RouterModule,
         AppRoutingModule,
         ComponentsModule,
-        ExamplesModule,HttpClientModule
+        ExamplesModule,HttpClientModule,NgxPaginationModule,ToastrModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]

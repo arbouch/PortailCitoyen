@@ -14,21 +14,20 @@ import {HttpClient} from '@angular/common/http';
 export class MesReclamationComponent implements OnInit {
   public reclamation: Reclamation;
   public reclamations: Reclamation[];
- 
+  p:number=1;
   public citoyen: Citoyen;
   cintemp : string="";
+  numstored:String="";
 
   constructor(public service: ReclamationService,private router: Router,private http:HttpClient) { }
-  
-
-
-
-
-   
-
   ngOnInit(): void {
     this.cintemp=localStorage.getItem("cin")
     this.getreclamation(this.cintemp);
+     this.numstored=sessionStorage.getItem("numtel")
+   console.log(this.cintemp+"ddddddddd"+this.numstored)
+if ((this.cintemp=="null")&&(this.numstored=="null")) {
+   this.router.navigate(['/']);
+}
 
   }
   public goToAddReclamation():void{

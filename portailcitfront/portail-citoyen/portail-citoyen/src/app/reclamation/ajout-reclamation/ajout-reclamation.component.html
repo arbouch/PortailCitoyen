@@ -1,12 +1,24 @@
+<app-navbar></app-navbar>
+  <div class="header header-primary text-center">
+    <div class="category">
+        <img src="../../assets/imageang/reclamation.webp" style ="width:30%; height:20%; margin-top: 70px;" >
+    </div>
+</div>
+<ngb-alert *ngIf="erreur" style="background-color:#f55549"  _ngcontent-c5="" class="alert alert-danger" role="alert">
+  <div _ngcontent-c5="" class="container"><div _ngcontent-c5="" class="alert-wrapper">
+     <div _ngcontent-c5="" class="message">
+      <div _ngcontent-c5="" class="alert-icon">
+      <i _ngcontent-c5="" class="now-ui-icons ui-1_bell-53"></i></div>
+  <strong _ngcontent-c5="">Erreur </strong>veuillez vérifier les coordonnées saisies</div></div></div></ngb-alert>
 
-<div class="card card-login card-plain" style="margin-top: 50px;">
-  <form class="form" #form="ngForm" (ngSubmit)="addreclamation()">
-    <small class="text-danger">{{msg}}</small>
-      <div class="header header-primary text-center">
-          <div class="category">
-              <img src="../../assets/imageang/reclamation.webp" style ="width:30%; height:20%;" >
-          </div>
-      </div>
+  <form  ngNativeValidate class="form" #form="ngForm" (ngSubmit)="EnvoyerCode()"  >
+    
+    <div *ngIf="showspinner" class="d-flex justify-content-center"> 
+      <div class="spinner-border" role="status"> 
+          <span class="sr-only" id="loading"></span> 
+      </div> 
+  </div> 
+    
       <h5 >Attribut a changer</h5>
 
       <div class="content">
@@ -17,7 +29,7 @@
               <span class="input-group-text">  <i class="now-ui-icons loader_gear spin"></i></span>
          
             </div>
-          <select (change)="selectOption($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+          <select   (change)="selectOption($event.target.value)" class="form-control" id="exampleFormControlSelect1" required>
             <option value="" >Veuillez choisir l'attribut</option>
             <option value="Nom" >Nom</option>
             <option value="Prenom">Prenom</option>
@@ -52,7 +64,7 @@
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="now-ui-icons files_paper"></i></span>
           </div>
-            <input  [(ngModel)]="reclamationfromform.reclamations"  [ngModelOptions]="{standalone: true}" type="text" placeholder="Nouvelle Information" class="form-control" (focus)="focus1=true" (blur)="focus1=false"/>
+            <input  [(ngModel)]="reclamationfromform.reclamations"  [ngModelOptions]="{standalone: true}" type="text" placeholder="Nouvelle Information" class="form-control" (focus)="focus1=true" (blur)="focus1=false" required />
         </div>
 
         <h5 *ngIf="afficherinputverification" for="reclamation" >Code Verification</h5>
@@ -62,19 +74,19 @@
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="now-ui-icons tech_mobile"></i></span>
           </div>
-            <input  [(ngModel)]="reclamationfromform.code"  [ngModelOptions]="{standalone: true}" type="text" placeholder="Nouvelle Information" class="form-control" (focus)="focus1=true" (blur)="focus1=false"/>
+            <input  required class="form-control"[(ngModel)]="reclamationfromform.code"  [ngModelOptions]="{standalone: true}" type="text" placeholder="Nouvelle Information" class="form-control" (focus)="focus1=true" (blur)="focus1=false"/>
         </div>
       </div>
      
    
     
-      
+      <button *ngIf="!afficherinputverification" type="submit"   class="btn btn-primary btn-round btn-lg btn-block" >Envoyer </button>
+  
   </form>
-  <div class="footer text-center">
-    <button *ngIf="!afficherinputverification" type="submit"  (click)="EnvoyerCode()" class="btn btn-primary btn-round btn-lg btn-block">Envoyer </button>
-    <button *ngIf="afficherinputverification" type="submit"  (click)="Verifier()" class="btn btn-primary btn-round btn-lg btn-block">Verifier et Ajouter </button>
+  <button *ngIf="afficherinputverification" type="submit"  (click)="Verifier()" class="btn btn-primary btn-round btn-lg btn-block">Verifier et Ajouter </button>
 
-</div>
-</div>
+  <div class="footer text-center">
+
+  </div>
 
 

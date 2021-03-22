@@ -14,12 +14,19 @@ export class SignaleComponent implements OnInit {
   public signale: Signale;
   public signales: Signale[];
    cintemp : string="";
+   p:number=1;
+   numstored : string="";
 
   constructor(public service: SignaleService,private router: Router,private http:HttpClient) { }
 
   ngOnInit(): void {
     this.cintemp=localStorage.getItem("cin")
-    this.getSignale_ByCitoyen(this.cintemp);
+    this.numstored=sessionStorage.getItem("numtel")
+    if ((this.cintemp=="null")&&(this.numstored=="null")) 
+        this.router.navigate(['/']);
+   
+    else 
+        this.getSignale_ByCitoyen(this.cintemp);
 
   }
   public getSignale_ByCitoyen(cintemp : string):void{

@@ -20,18 +20,20 @@ import { SignaleComponent } from './signale/signale.component';
 
 
 const routes: Routes =[
-    { path: 'nucleoicons',component: NucleoiconsComponent },
-    { path: 'examples/landing',component: LandingComponent },
+    
+     { path: 'nucleoicons',component: NucleoiconsComponent },
+     { path: 'examples/landing',component: LandingComponent },
      { path: 'examples/profile',component: ProfileComponent },
-     {path :'',component:LoginComponent},
-     {path :'otp',component:OTPverificationComponent},
      {path :'accueil',component:AccueilComponent},
      {path :'detailscitoyens',component:CitoyendetailComponent},
      {path :'mesreclamation',component:MesReclamationComponent},
      {path :'ajouterreclamation',component:AjoutReclamationComponent},
      {path :'utilisation_site_cit',component:UtilisationSiteCitComponent},
      {path :'messignale',component:SignaleComponent},
-     {path :'update',component:UpdatecitoyenComponent}
+     {path :'update',component:UpdatecitoyenComponent},
+     {path :'reclamation',component:ReclamationComponent},
+     {path :'',component:LoginComponent},
+     {path :'otp',component:OTPverificationComponent}
      
 
 ];

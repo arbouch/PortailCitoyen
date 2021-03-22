@@ -5,6 +5,9 @@ import {HttpClient} from '@angular/common/http';
 import { Updatecitoyen } from './../model/updatecitoyen.model';
 import { Citoyen } from './../model/citoyen.model';
  import { UpdatecitoyenService } from './../shared/updatecitoyen.service'
+ import { Observable } from 'rxjs';
+ import { ToastContainerModule, ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-updatecitoyen',
   templateUrl: './updatecitoyen.component.html',
@@ -25,31 +28,35 @@ export class UpdatecitoyenComponent implements OnInit {
   public Zipcode = [];
   showMsg: boolean = false;
   afficherinputverification:boolean=false;
-
+  affichierbuttonenvoyer:boolean=false;
 
   public updatecitoyenform = new Updatecitoyen();
 public citoyen = new Citoyen();
-  constructor(public service: UpdatecitoyenService,private router: Router,private http:HttpClient) { }
-
+  constructor(public service: UpdatecitoyenService,private router: Router,private http:HttpClient, private toast :ToastrService) { }
   ngOnInit(): void {
     this.sessionvalue=localStorage.getItem("cin");
     this.numstored=sessionStorage.getItem("numtel")
-
+    if ((this.sessionvalue=="null")&&(this.numstored=="null")) {
+      this.router.navigate(['/']);
+   }
   }
   update_numtel() {
     this.input_numtel=!this.input_numtel;
     this.input_adresse=false;
     this.input_email=false;
+    this.affichierbuttonenvoyer=true;
   }
   update_mail() {
     this.input_email=!this.input_email;
     this.input_adresse=false;
     this.input_numtel=false;
+    this.affichierbuttonenvoyer=true;
   }
   update_adresse() {
     this.input_adresse=!this.input_adresse;
     this.input_numtel=false;
     this.input_email=false;
+    this.affichierbuttonenvoyer=true;
   }
    public selectOption(value):void {
     console.log(value);
@@ -163,34 +170,33 @@ if(this.updatecitoyenform.newnumtel!=null){
       }
       public EnvoyerCode():void{
        
-        console.log(  "this is the number"+this.codetest.toString())
 
         this.service.SendNumber(this.numstored.toString()).subscribe(
-          data=> {console.log('response received');
+          data=> {
+  
+            console.log('response received');
               }
+
           ,error=>{console.log("exception occured");
            this.msg="veuillez vérifier les informations saisies ";}
           );
-      this.afficherinputverification=true;
-        
-              }
-              public Verifier():void{
-              //  this.codetest="978145"
-                this.codetest=this.updatecitoyenform.code
-                console.log(  "this is the number"+this.codetest.toString())
-         
-                this.service.Verifier(this.codetest.toString()).subscribe(
-                  data=> {console.log('response received');
-                  return this.UpdateCitoyen()
-                  this.showMsg= true;
+          this.afficherinputverification=true;
 
-                  
-                      }
+     
+        }
+            
+              public Verifier():void{
+                this.codetest=this.updatecitoyenform.code
+                 this.service.Verifier(this.codetest.toString()).subscribe(
+                  data=> {console.log('response received');
+                  this.toast.success('Modification terminée avec succees',"Mise A jour");
+                  return this.UpdateCitoyen()
+                       }
                   ,error=>{console.log("exception occured");
-                   this.msg="veuillez vérifier les informations saisies ";}
+                  this.toast.error('Modification non faite ',"Mise A jour");
+                   }
                   );
-                
-                      }
+                       }
    
 
 }

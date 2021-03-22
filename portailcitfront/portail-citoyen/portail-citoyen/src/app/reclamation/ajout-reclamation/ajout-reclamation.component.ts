@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { ToastContainerModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ajout-reclamation',
@@ -13,34 +14,35 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AjoutReclamationComponent implements OnInit {
    public reclamations: Reclamation[];
-  msg : string = "";
+  msg : String = "";
   public citoyen: Citoyen;
-  cintemp : string="";
+  cintemp : String="";
   sessionvalue :String="";
-  codetest :string = "";
+  codetest :String = "";
   numstored :String="";
+  erreur : boolean=false;
+  showspinner : boolean;
   afficherinputverification:boolean=false;
 
   public reclamation = new Reclamation();
   reclamationfromform = new Reclamation();
-  constructor(public service: ReclamationService,private router: Router,private http:HttpClient) { }
+  constructor(public service: ReclamationService,private router: Router,private http:HttpClient, private toast :ToastrService) { }
 
   ngOnInit(): void {
-    this.sessionvalue=localStorage.getItem("cin")
-    this.numstored=sessionStorage.getItem("numtel")
-
+     this.sessionvalue=localStorage.getItem("cin")
+  this.numstored=sessionStorage.getItem("numtel")
+  console.log(this.sessionvalue+"ggggggg"+this.numstored )
+    if ((this.sessionvalue=="null")&&(this.numstored=="null")) 
+         this.router.navigate(['/']);
   }
   public selectOption(event){
-console.log(event);
-this.reclamationfromform.attribut=event;
+  console.log(event);
+  this.reclamationfromform.attribut=event;
   }
   public addreclamation():void{
-var bothVar = {'value1': this.reclamationfromform.attribut, 'value2': this.reclamationfromform.reclamations};
-//if(confirm("Voulez vous vraiment envoyer cette reclamation ?  "))
-    this.service.AddReclamation(bothVar,this.sessionvalue).subscribe(
-    data=> {console.log('response received');
-
-        }
+      var bothVar = {'value1': this.reclamationfromform.attribut, 'value2': this.reclamationfromform.reclamations};
+     this.service.AddReclamation(bothVar,this.sessionvalue).subscribe(
+    data=> {console.log('response received');}
     ,error=>{console.log("exception occured");
     console.log(this.reclamationfromform.citoyen);
     this.msg="veuillez vérifier les informations saisies ";}
@@ -48,30 +50,32 @@ var bothVar = {'value1': this.reclamationfromform.attribut, 'value2': this.recla
 
       }
       public EnvoyerCode():void{
-       
-        console.log(  "this is the number"+this.codetest.toString())
-
+        this.showspinner=true;
         this.service.SendNumber(this.numstored.toString()).subscribe(
-          data=> {console.log('response received');
+          data=> {
+            if (data) { 
+              this.showspinner=false; 
+          } console.log('response received');
               }
           ,error=>{console.log("exception occured");
+          this.showspinner=false;
+          this.erreur=true;
            this.msg="veuillez vérifier les informations saisies ";}
           );
-      this.afficherinputverification=true;
-        
+           this.afficherinputverification=true;
               }
               public Verifier():void{
-              //  this.codetest="978145"
-                this.codetest=this.reclamationfromform.code
-                console.log(  "this is the number"+this.codetest.toString())
-         
+                 this.codetest=this.reclamationfromform.code
+          
                 this.service.Verifier(this.codetest.toString()).subscribe(
                   data=> {console.log('response received');
+                  this.toast.success('Reclamation Envoyé',"Reclamation ");
                   return this.addreclamation()
 
                       }
                   ,error=>{console.log("exception occured");
-                   this.msg="veuillez vérifier les informations saisies ";}
+                  this.toast.error('Reclamation Non nvoyé non faite ',"Reclamation");
+                }
                   );
                 
                       }

@@ -20,7 +20,7 @@
          </div>
       </div>
         <div class="navbar-translate">
-            <a class="navbar-brand" [routerLink]="['/index']" placement="bottom" ngbTooltip="Designed by Invision. Coded by Creative Tim">
+            <a class="navbar-brand" [routerLink]="['/detailscitoyens']" placement="bottom" ngbTooltip="Designed by Invision. Coded by Creative Tim">
                Portail Citoyen
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
@@ -32,48 +32,51 @@
         <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link" href="https://www.creative-tim.com/product/now-ui-kit-angular" target="_blank">
+                  <a target="_self"  [routerLink]="['../detailscitoyens']"  class="nav-link">
                       <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                       <p>Mes Données</p>
                   </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/product/now-ui-kit-angular" target="_blank">
+                <a class="nav-link" target="_self"  [routerLink]="['../update']">
                     <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                     <p>Mise A jour</p>
                 </a>
             </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://creativetimofficial.github.io/now-ui-kit-angular/documentation/tutorial" target="_blank">
+                    <a target="_self"  [routerLink]="['../utilisation_site_cit']" class="nav-link">
                       <i class="now-ui-icons files_paper"></i>
-                      <p>Manipulation De Données</p>
+                      <p>Manip De Données</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://creativetimofficial.github.io/now-ui-kit-angular/documentation/tutorial" target="_blank">
+                  <a  target="_self" class="nav-link" [routerLink]="['../mesreclamation']"  >
                     <i class="now-ui-icons files_paper"></i>
-                    <p>Reclamations</p>
+                    <p>Mes Reclamations</p>
                   </a>
               </li>
-                <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                    <p class="d-lg-none d-xl-none">Twitter</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-                    <i class="fab fa-facebook-square"></i>
-                    <p class="d-lg-none d-xl-none">Facebook</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                    <p class="d-lg-none d-xl-none">Instagram</p>
-                  </a>
-                </li>
-            </ul>
+              <li class="nav-item">
+                <a  target="_self" class="nav-link" [routerLink]="['../ajouterreclamation']"  >
+                  <i class="now-ui-icons files_paper"></i>
+                  <p>Ajout Reclamation</p>
+                </a>
+            </li>
+
+              <li class="nav-item">
+                <a  target="_self" class="nav-link" [routerLink]="['../messignale']"  >
+                  <i class="now-ui-icons files_paper"></i>
+                  <p>Signalement</p>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a  class="nav-link"  target="_self" [routerLink]="['../']">
+                <i class="now-ui-icons files_paper"></i>
+                <p>Quitter</p>
+              </a>
+           </li>
+
+               
+             </ul>
         </div>
     </div>
 </nav>

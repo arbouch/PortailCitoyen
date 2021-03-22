@@ -12,23 +12,38 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
   user = new User();
-  msg = '';
+  erreur : boolean=false;
+  showspinner : boolean;
+  test : boolean=true;
+  msg="";
   constructor(private service: RegistrationService,private router: Router) { }
 
   ngOnInit(): void {
-  }
+    sessionStorage.setItem("numtel",null)
+    localStorage.setItem("cin",null);
+
+   }
+
+
   userlogin(){
+    this.showspinner=true;
     this.service.loginUserFromRemote(this.user).subscribe(
-    data=> {console.log("response received");
+    data=> {
+      if (data) { 
+         this.showspinner=false; 
+    } 
+    console.log("response received");
      this.router.navigate(['/otp'])
      sessionStorage.setItem("numtel",this.user.numtel.toString())
      localStorage.setItem("cin",this.user.cin.toString());
-
-
     }
 
-    ,error=>{console.log("exception occured");
+    ,error=>{console.log("exception occured"); this.showspinner=false;
+    this.erreur=true;
     this.msg="veuillez vérifier les informations saisies "}
+   
+
     )
       }
+  
 }
