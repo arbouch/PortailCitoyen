@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<div style=" margin-top: 90px;">
+    <ngb-alert *ngIf="erreur" style="background-color:#f55549"  _ngcontent-c5="" class="alert alert-danger" role="alert">
+      <div _ngcontent-c5="" class="container"><div _ngcontent-c5="" class="alert-wrapper">
+         <div _ngcontent-c5="" class="message">
+          <div _ngcontent-c5="" class="alert-icon">
+          <i _ngcontent-c5="" class="now-ui-icons ui-1_bell-53"></i></div>
+      <strong _ngcontent-c5="">Erreur </strong>une erreur est survenue lors du chargement de ce contenu</div></div></div></ngb-alert>
+  
+<div class="table-responsive">
+
+    <table class="table "  >
+    <tr>
+      <th>UIC</th>
+      <th>nom</th>
+      <th>prenom</th>
+      <th>Prénom du père</th>
+      <th>Prénom du grand-père paternel</th>
+      <th>Nom de la mère</th>
+      <th>Prénom de la mère</th>
+      <th>Date de naissance</th>
+      <th>Sexe</th>
+      <th>CIN</th>
+      <th>Email</th>
+      <th>Num Tel</th>
+    </tr>
+    <tr >
+      <td>
+        {{ citoyen?.iuc }}
+      </td>
+  
+      <td>
+        {{ citoyen?.nom }}
+      </td>
+      <td>
+        {{ citoyen?.prenom }}
+      </td>
+      <td>
+        {{ citoyen?.prenom_pere }}
+      </td>
+      <td>
+        {{ citoyen?.prenom_grandpere }}
+      </td>
+      <td>
+        {{ citoyen?.nom_mere }}
+      </td>
+      <td>
+        {{ citoyen?.prenom_mere }}
+      </td>
+      <td>
+        {{ citoyen?.date_de_naissance }}
+      </td>
+     
+     
+      <td>
+       
+        <ngx-qrcode
+        [elementType]="elementType"
+        [errorCorrectionLevel]="correctionLevel"
+        [value]="value"
+        cssClass="bshadow"></ngx-qrcode>
+      </td>
+     
+  
+    </tr>
+  </table>

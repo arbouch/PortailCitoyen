@@ -17,6 +17,8 @@ import { OTPverificationComponent } from './otpverification/otpverification.comp
 import { UpdatecitoyenComponent } from './updatecitoyen/updatecitoyen.component';
 import { UtilisationSiteCitComponent } from './utilisation-site-cit/utilisation-site-cit.component';
 import { SignaleComponent } from './signale/signale.component';
+import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-detail-papier.component';
+
 
 
 const routes: Routes =[
@@ -33,8 +35,10 @@ const routes: Routes =[
      {path :'update',component:UpdatecitoyenComponent},
      {path :'reclamation',component:ReclamationComponent},
      {path :'',component:LoginComponent},
-     {path :'otp',component:OTPverificationComponent}
-     
+     {path :'otp',component:OTPverificationComponent},
+     {path :'papier',component:CitoyenDetailPapierComponent}
+
+      
 
 ];
 

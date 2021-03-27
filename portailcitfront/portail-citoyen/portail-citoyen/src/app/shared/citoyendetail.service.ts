@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CitoyendetailService {
 
-  private baseUrl = "http://localhost:81/citoyen";
-
+ 
   constructor(private http:HttpClient) { }
 
 public getcitoyens():Observable<any>{

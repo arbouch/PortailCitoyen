@@ -116,7 +116,14 @@
     </td>
     <td>
       {{ citoyen?.numtel }}
+      <ngx-qrcode
+      [elementType]="elementType"
+      [errorCorrectionLevel]="correctionLevel"
+      [value]="value"
+      cssClass="bshadow"></ngx-qrcode>
     </td>
+   
+
   </tr>
 </table>
 </div>

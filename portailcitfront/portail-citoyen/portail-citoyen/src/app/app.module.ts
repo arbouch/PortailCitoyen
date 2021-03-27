@@ -23,6 +23,8 @@ import { SignaleComponent } from './signale/signale.component';
 import { UpdatecitoyenComponent } from './updatecitoyen/updatecitoyen.component';
 import { NgxPaginationModule } from "ngx-pagination";
 import { ToastrModule } from 'ngx-toastr';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-detail-papier.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
         ReclamationComponent,
         SignaleComponent,
         UtilisationSiteCitComponent,
-        OTPverificationComponent
+        OTPverificationComponent,
+        CitoyenDetailPapierComponent
 
 
         
@@ -48,7 +51,8 @@ import { ToastrModule } from 'ngx-toastr';
         RouterModule,
         AppRoutingModule,
         ComponentsModule,
-        ExamplesModule,HttpClientModule,NgxPaginationModule,ToastrModule.forRoot()
+        ExamplesModule,HttpClientModule,NgxPaginationModule,ToastrModule.forRoot(),
+        NgxQRCodeModule
     ],
     providers: [],
     bootstrap: [AppComponent]
