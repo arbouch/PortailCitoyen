@@ -25,7 +25,7 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { ToastrModule } from 'ngx-toastr';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-detail-papier.component';
-
+ 
 @NgModule({
     declarations: [
         AppComponent,

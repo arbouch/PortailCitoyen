@@ -1,10 +1,12 @@
+import { jsPDF } from 'jspdf';
 import { Component, OnInit } from '@angular/core';
  import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Citoyen } from './../model/citoyen.model';
 import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
 import { CitoyenDetailPapierService } from './../shared/citoyen-detail-papier.service';
-
+import * as jspdf from 'jspdf';
+ import   html2canvas  from 'html2canvas';
  
 @Component({
   selector: 'app-citoyen-detail-papier',
@@ -37,6 +39,7 @@ cintemp : string="";
    this.getcitoyen(this.cintemp);
    this.qetQr(this.cintemp);
   }
+  
   public getcitoyen(cintemp : string):void {
     this.showspinner=true; 
 
@@ -52,9 +55,9 @@ cintemp : string="";
  }
  
     )
+ 
   }
-
-  public qetQr(cintemp : string):void {
+   public qetQr(cintemp : string):void {
     this.showspinner=true; 
 
     this.service.getqrbyCin(cintemp).subscribe(
@@ -65,17 +68,25 @@ cintemp : string="";
         var myJSON = JSON.stringify(response);
  
           this.value=myJSON;
-          console.log("hhhhhhhhhhhhh"+this.value )
-        }
+         }
         ,error=>{console.log("exception occured"); this.showspinner=false;
         this.erreur=true;
 
-   
  }
  
     )
   }
 
-
+  download(){
+    var element = document.getElementById('document')
+    html2canvas(element).then((canvas)=> {
+      console.log(canvas)
+      var imgData=canvas.toDataURL('image/png')
+      var doc =new jsPDF()
+      var imgHeight=canvas.height*208 / canvas.width;
+      doc.addImage(imgData,0,0,208,imgHeight)
+      doc.save("document")
+    })
+  }
 
 }
