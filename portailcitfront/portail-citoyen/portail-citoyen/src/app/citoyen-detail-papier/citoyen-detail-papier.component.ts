@@ -21,6 +21,7 @@ export class CitoyenDetailPapierComponent implements OnInit {
   elementType = NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.HIGH;
   value = '';
+  myDate = new Date();
 
   constructor(private service: CitoyenDetailPapierService,private router: Router) { }
   dnpers : boolean=false;
@@ -29,7 +30,6 @@ export class CitoyenDetailPapierComponent implements OnInit {
   dnaddr : boolean=false;
   erreur : boolean=false;
   showspinner : boolean;
-
   cin : string="";
 cintemp : string="";
 
@@ -76,7 +76,17 @@ cintemp : string="";
  
     )
   }
+  printPage(cmpName) {
+   // window.print();
+   let printContents = document.getElementById(cmpName).innerHTML;
+   let originalContents = document.body.innerHTML;
 
+   document.body.innerHTML = printContents;
+
+   window.print();
+
+   document.body.innerHTML = originalContents;
+}
   download(){
     var element = document.getElementById('document')
     html2canvas(element).then((canvas)=> {
@@ -88,5 +98,6 @@ cintemp : string="";
       doc.save("document")
     })
   }
-
+  
+ 
 }

@@ -1,0 +1,16 @@
+@media print {
+    .card{
+      font-size: 30px;  
+      margin-left: 80px;
+    }
+    .card ng-templat {
+ display: block;
+    }
+     
+  }
+  .tb td {
+       text-align:left; 
+  }
+  .tb {
+ margin: 0 auto;
+}

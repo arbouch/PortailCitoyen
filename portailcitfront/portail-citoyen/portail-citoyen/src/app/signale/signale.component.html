@@ -7,7 +7,7 @@
       
        <th scope="col"> Signale ID</th>
       <th scope="col">Statut</th>
-   
+      <th scope="col">Date Signale</th>
      
   <tr  *ngFor="let signale of signales | paginate: {itemsPerPage: 3, currentPage: p } ; index as i"  >
    
@@ -18,7 +18,9 @@
     <td >
       {{ signale?.statut }}
      </td>
-     
+     <td >
+      {{ signale?.dateSignale }}
+     </td>
   </tr>
  
 </table>

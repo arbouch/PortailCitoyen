@@ -5,4 +5,5 @@ export class Signale {
   site:any;
   donnes_utilisees:any;
   citoyen: any;
+  dateSignale:string
  }
