@@ -1,35 +1,60 @@
-import { BrowserModule } from '@angular/platform-browser';
+ import { Reclamation } from './model/reclamation.model';
+ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
+import { ExamplesModule } from './examples/examples.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 import { AccueilComponent } from './accueil/accueil.component';
 import { OTPverificationComponent } from './otpverification/otpverification.component';
 import { CitoyendetailComponent } from './citoyendetail/citoyendetail.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ReclamationComponent } from './reclamation/reclamation.component';
+import { MesReclamationComponent } from './reclamation/mes-reclamation/mes-reclamation.component';
+import { AjoutReclamationComponent } from './reclamation/ajout-reclamation/ajout-reclamation.component';
+import { UtilisationSiteCitComponent } from './utilisation-site-cit/utilisation-site-cit.component';
+import { SignaleComponent } from './signale/signale.component';
+import { UpdatecitoyenComponent } from './updatecitoyen/updatecitoyen.component';
+import { NgxPaginationModule } from "ngx-pagination";
+import { ToastrModule } from 'ngx-toastr';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-detail-papier.component';
+ 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegistrationComponent,
-    AccueilComponent,
-    OTPverificationComponent
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        CitoyendetailComponent,
+        AjoutReclamationComponent,
+        LoginComponent,
+        MesReclamationComponent,
+        UpdatecitoyenComponent,
+        ReclamationComponent,
+        SignaleComponent,
+        UtilisationSiteCitComponent,
+        OTPverificationComponent,
+        CitoyenDetailPapierComponent
 
 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,HttpClientModule, BrowserAnimationsModule
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+        
+    ],
+    imports: [
+        BrowserAnimationsModule,
+        NgbModule,
+        FormsModule,
+        RouterModule,
+        AppRoutingModule,
+        ComponentsModule,
+        ExamplesModule,HttpClientModule,NgxPaginationModule,ToastrModule.forRoot(),
+        NgxQRCodeModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

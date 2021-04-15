@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<h1 style="margin-top: 90px ; color: palegreen;">Liste Des Demandes d' éclaircissements</h1>
+
+<div style="margin-top: 60px;">
+  <table class="table"  >
+      
+       <th scope="col"> Signale ID</th>
+      <th scope="col">Statut</th>
+      <th scope="col">Date Signale</th>
+     
+  <tr  *ngFor="let signale of signales | paginate: {itemsPerPage: 3, currentPage: p } ; index as i"  >
+   
+    <td >
+      {{ signale?.id_signel }}
+     </td>
+
+    <td >
+      {{ signale?.statut }}
+     </td>
+     <td >
+      {{ signale?.dateSignale }}
+     </td>
+  </tr>
+ 
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+</div>
