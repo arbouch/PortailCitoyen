@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<h1 style="margin-top: 90px ; color: palegreen;">Liste Des Demandes d' éclaircissements</h1>
+
+<div style="margin-top: 60px;">
+  <table class="table"  >
+      
+       <th scope="col">Statut</th>
+      <th scope="col">Date Signale</th>
+      <th scope="col">Manipulation Signalée</th>
+
+     
+  <tr  *ngFor="let signale of signales | paginate: {itemsPerPage: 3, currentPage: p } ; index as i"  >
+   
+    
+
+    <td >
+      {{ signale?.statut }}
+     </td>
+     <td >
+      {{ signale?.dateSignale }}
+     </td>
+     <td >
+      Date Manipulation:{{ signale?.manipulation.date_utilisation }}<br>
+      Site :  {{ signale?.manipulation.site.nom_site }}<br>
+      Utilisation :  {{ signale?.manipulation.utilisation_site.libelle_utilisation }}<br>
+      Données Utilisées :  {{ signale?.manipulation.donnes_utilisees }}
+
+       
+     </td>
+     <td >
+     </td>
+      
+  </tr>
+ 
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+</div>
