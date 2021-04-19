@@ -5,15 +5,14 @@
 <div style="margin-top: 60px;">
   <table class="table"  >
       
-       <th scope="col"> Signale ID</th>
-      <th scope="col">Statut</th>
+       <th scope="col">Statut</th>
       <th scope="col">Date Signale</th>
+      <th scope="col">Manipulation Signalée</th>
+
      
   <tr  *ngFor="let signale of signales | paginate: {itemsPerPage: 3, currentPage: p } ; index as i"  >
    
-    <td >
-      {{ signale?.id_signel }}
-     </td>
+    
 
     <td >
       {{ signale?.statut }}
@@ -21,6 +20,17 @@
      <td >
       {{ signale?.dateSignale }}
      </td>
+     <td >
+      Date Manipulation:{{ signale?.manipulation.date_utilisation }}<br>
+      Site :  {{ signale?.manipulation.site.nom_site }}<br>
+      Utilisation :  {{ signale?.manipulation.utilisation_site.libelle_utilisation }}<br>
+      Données Utilisées :  {{ signale?.manipulation.donnes_utilisees }}
+
+       
+     </td>
+     <td >
+     </td>
+      
   </tr>
  
 </table>

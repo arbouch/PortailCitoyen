@@ -25,7 +25,9 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { ToastrModule } from 'ngx-toastr';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-detail-papier.component';
- 
+import { Testv3Component } from './testv3/testv3.component';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -39,7 +41,8 @@ import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-de
         SignaleComponent,
         UtilisationSiteCitComponent,
         OTPverificationComponent,
-        CitoyenDetailPapierComponent
+        CitoyenDetailPapierComponent,
+        Testv3Component
 
 
         
@@ -52,9 +55,10 @@ import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-de
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,HttpClientModule,NgxPaginationModule,ToastrModule.forRoot(),
-        NgxQRCodeModule
+        NgxQRCodeModule,
+        RecaptchaV3Module
     ],
-    providers: [],
+    providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: "6Le5Zq4aAAAAABl4d-HnsCBlk1bWHt1iIX6ryTGE" }],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

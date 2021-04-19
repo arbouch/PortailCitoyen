@@ -36,6 +36,7 @@
     "jquery": "3.5.1",
     "jspdf": "^2.3.1",
     "jw-bootstrap-switch-ng2": "2.0.5",
+    "ng-recaptcha": "^7.0.1",
     "ng2-nouislider": "1.8.2",
     "ngx-pagination": "^5.0.0",
     "ngx-toastr": "^13.2.1",

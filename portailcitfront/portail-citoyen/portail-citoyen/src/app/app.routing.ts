@@ -19,11 +19,13 @@ import { UtilisationSiteCitComponent } from './utilisation-site-cit/utilisation-
 import { SignaleComponent } from './signale/signale.component';
 import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-detail-papier.component';
 
+import { Testv3Component } from './testv3/testv3.component';
 
 
 const routes: Routes =[
-    
-     { path: 'nucleoicons',component: NucleoiconsComponent },
+    { path: 'v3',component: Testv3Component },
+
+      { path: 'nucleoicons',component: NucleoiconsComponent },
      { path: 'examples/landing',component: LandingComponent },
      { path: 'examples/profile',component: ProfileComponent },
      {path :'accueil',component:AccueilComponent},
@@ -44,7 +46,7 @@ const routes: Routes =[
 
 @NgModule({
     imports: [
-        CommonModule,
+     CommonModule,
         BrowserModule,
         RouterModule.forRoot(routes)
     ],

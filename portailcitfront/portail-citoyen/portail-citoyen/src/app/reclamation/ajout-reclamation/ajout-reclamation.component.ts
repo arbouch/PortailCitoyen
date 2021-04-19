@@ -69,8 +69,9 @@ export class AjoutReclamationComponent implements OnInit {
           
                 this.service.Verifier(this.codetest.toString()).subscribe(
                   data=> {console.log('response received');
+                   this.addreclamation()
                   this.toast.success('Reclamation Envoyé',"Reclamation ");
-                  return this.addreclamation()
+
 
                       }
                   ,error=>{console.log("exception occured");

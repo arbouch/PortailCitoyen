@@ -5,5 +5,9 @@ export class Signale {
   site:any;
   donnes_utilisees:any;
   citoyen: any;
-  dateSignale:string
+  dateSignale:string;
+  manipulation:any;
+  reclamation:any
+  constructor() {}
+
  }

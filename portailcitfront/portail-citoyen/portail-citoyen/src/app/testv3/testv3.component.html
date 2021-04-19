@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Le5Zq4aAAAAABl4d-HnsCBlk1bWHt1iIX6ryTGE">
+    </script>
+</head>
+<body>
+  <form method="POST" id="demoform" name="demoform" > 
+    <input required   type="number" class="form-control"  placeholder="99000111" name="numtel">
+    <input  type="hidden"  id="g-recaptcha-response"     name="g-recaptcha-response">
+    <button class="g-recaptcha" 
+    data-sitekey="6Le5Zq4aAAAAABl4d-HnsCBlk1bWHt1iIX6ryTGE" 
+    data-callback='onSubmit' 
+    data-action='submit'
+    >Submit</button>
+    
+</form>
+</body>
+ 
+<script>
+     document.getElementById("demoform").submit();
+
+</script></html>

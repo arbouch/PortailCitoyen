@@ -10,8 +10,8 @@ import {HttpClient } from '@angular/common/http';
 export class RegistrationService {
 
    constructor(private http :HttpClient) {}
-public loginUserFromRemote(user:User):Observable<any> {
-  return this.http.post<any>("http://localhost:81/login",user)
+public loginUserFromRemote(user:User,captchatoken:string):Observable<any> {
+  return this.http.post<any>("http://localhost:81/login/"+captchatoken,user)
 }
 public SendOtp(user:User):Observable<any> {
 

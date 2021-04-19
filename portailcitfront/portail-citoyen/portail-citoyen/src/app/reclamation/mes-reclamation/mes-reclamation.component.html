@@ -2,14 +2,17 @@
 
  
 <h1 style="margin-top: 60px ; color: palegreen;">Mes Reclamations</h1>
+<button (click)="goToAddReclamation()"  class="btn btn-primary btn-round" style="width:20%;" >Ajouter une Reclamation</button>
 
   <table class="table">
     <tr>
      
       <th scope="col">Attribut</th>
 
-      <th scope="col">Reclamation</th>
+      <th scope="col">Nouvelle valeur</th>
+      <th scope="col">Ancien Valeur</th>
       <th scope="col">Date Reclamation</th>
+
 
 
   <tr  *ngFor="let reclamation of reclamations  | paginate: {itemsPerPage: 3, currentPage: p } ;    index as i "  >
@@ -21,10 +24,12 @@
       {{ reclamation?.reclamations }}
     </td>
     <td >
+      {{ reclamation?.ancienValeur }}
+    </td>
+    <td >
       {{ reclamation?.dateReclamation }}
     </td>
     
   </tr>
 </table>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
-<button (click)="goToAddReclamation()"  class="btn btn-primary btn-round" style="width: 100%;" >Ajouter une Reclamation</button>
+<pagination-controls class="pagination-primary" (pageChange)="p = $event"></pagination-controls>

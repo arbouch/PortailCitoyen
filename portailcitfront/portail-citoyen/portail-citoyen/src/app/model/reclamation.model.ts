@@ -4,5 +4,7 @@ export class Reclamation {
   attribut:string;
   code:string;
   dateReclamation:string
+  ancienValeur:string
+
  constructor() {}
 }

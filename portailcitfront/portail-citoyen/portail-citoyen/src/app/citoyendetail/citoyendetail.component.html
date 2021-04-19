@@ -62,178 +62,360 @@
 
  </div>
 </div>
-<div class="table-responsive">
-
-  <table class="table " *ngIf="dnpers" >
-  <tr>
-    <th>UIC</th>
-    <th>nom</th>
-    <th>prenom</th>
-    <th>Prénom du père</th>
-    <th>Prénom du grand-père paternel</th>
-    <th>Nom de la mère</th>
-    <th>Prénom de la mère</th>
-    <th>Date de naissance</th>
-    <th>Sexe</th>
-    <th>CIN</th>
-    <th>Email</th>
-    <th>Num Tel</th>
-  </tr>
-  <tr >
-    <td>
-      {{ citoyen?.iuc }}
-    </td>
-
-    <td>
-      {{ citoyen?.nom }}
-    </td>
-    <td>
-      {{ citoyen?.prenom }}
-    </td>
-    <td>
-      {{ citoyen?.prenom_pere }}
-    </td>
-    <td>
-      {{ citoyen?.prenom_grandpere }}
-    </td>
-    <td>
-      {{ citoyen?.nom_mere }}
-    </td>
-    <td>
-      {{ citoyen?.prenom_mere }}
-    </td>
-    <td>
-      {{ citoyen?.date_de_naissance }}
-    </td>
-    <td>
-      {{ citoyen?.sexe }}
-    </td>
-    <td>
-      {{ citoyen?.cin }}
-    </td>
-    <td>
-      {{ citoyen?.email }}
-    </td>
-    <td>
-      {{ citoyen?.numtel }}
-       
-    </td>
-   
-
-  </tr>
-</table>
-</div>
-<table class="table" *ngIf="actenaiss">
-  <tr>
-     <th>Commune de naissance</th>
-    <th>Arrondissement de naissance</th>
-    <th>Numéro acte de naissance</th>
-    <th>Année de naissance</th>
-    <th>Numéro de la carte d’identité nationale</th>
-    <th>Situation familiale</th>
-    <th>Date de la situation familiale</th>
-    <th>IUC du conjoint</th>
-    <th>IUC du père</th>
-    <th>IUC de la mère</th>
-    <th>Date de décès</th>
-
-  </tr>
-  <tr>
-    <td>
-      {{ citoyen?.commune_de_naissance}}
-    </td>
-
-    <td>
-      {{ citoyen?.arrondissement_de_naissance }}
-    </td>
-    <td>
-      {{ citoyen?.annee_de_naissance }}
-    </td>
-    <td>
-      {{ citoyen?.numero_acte_de_naissance }}
-    </td>
-    <td>
-      {{ citoyen?.cin }}
-    </td>
-    <td>
-      {{ citoyen?.situation_familiale }}
-    </td>
-    <td>
-      {{ citoyen?.date_de_la_situation_familiale }}
-    </td>
-    <td>
-      {{ citoyen?.iuc_du_conjoint }}
-    </td>
-    <td>
-      {{ citoyen?.iuc_du_pere }}
-    </td>
-    <td>
-      {{ citoyen?.iuc_de_la_mere }}
-    </td>
-    <td>
-      {{ citoyen?.date_de_deces }}
-    </td>
-  </tr>
-</table>
-<table class="table" *ngIf="actedeces">
-  <tr>
-     <th>Commune de décès</th>
-    <th>Année acte de décès</th>
-    <th>Arrondissement décès</th>
-    <th>Numéro acte de décès</th>
+ 
 
 
-  </tr>
-  <tr>
-    <td>
-      {{ citoyen?.commune_de_deces}}
-    </td>
-
-    <td>
-      {{ citoyen?.annee_acte_de_deces }}
-    </td>
-    <td>
-      {{ citoyen?.arrondissement_deces }}
-    </td>
-    <td>
-      {{ citoyen?.numero_acte_de_deces }}
-    </td>
-
-  </tr>
-</table>
-
-<table class="table" *ngIf="dnaddr">
-  <tr>
-     <th>Gouvernorat de l’adress</th>
-    <th>
-      Délégation adresse
-      </th>
-    <th>Localité adresse</th>
-    <th>Adresse déclarée</th>
-    <th>Code postale</th>
-
-  </tr>
-  <tr>
-    <td>
-      {{citoyen?.gouvernorat.gouvernorat}}
-    </td>
-
-    <td>
-      {{ citoyen?.delegation.delegation }}
-    </td>
-    <td>
-      {{ citoyen?.localite.localite}}
-    </td>
-    <td>
-      {{ citoyen?.adresse }}
-    </td>
-    <td>
-    {{ citoyen?.code_postal }}
-    </td>
 
  
 
-  </tr>
-</table>
+ <table *ngIf="dnpers"  style=" margin: 0 auto;"cellpadding="15"> 
+ 
+     <tr>   
+       <td>
+           <ngb-tabset  [justify]="'center'" class="text-center" >
+              <ngb-tab> 
+                <ng-template ngbTabTitle>
+                  <table style="color: black"> 
+                    <tr>
+                      <td >
+                        Nom:
+                      </td>
+                      <td>
+                        {{ citoyen?.nom }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        prenom:
+                      </td>
+                      <td>
+                        {{ citoyen?.prenom }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Prénom du père	: 
+                      </td>
+                      <td>
+                        {{ citoyen?.prenom_pere }}
+                      </td>
+                    </tr>
+                  </table>           
+                  </ng-template>                                                
+              </ngb-tab>
+          </ngb-tabset>
+        </td>      
+       
+
+          <td>
+              <ngb-tabset  [justify]="'center'" class="text-center" >
+                 <ngb-tab> 
+                   <ng-template ngbTabTitle>
+                     <table style="color: black;" >
+                       <tr>
+                         <td>
+                           Prénom du grand-père paternel:
+                         </td>
+                         <td>
+                           {{ citoyen?.prenom_grandpere }}
+                         </td>
+                       </tr>
+                       <tr>
+                         <td>
+                          Nom de la mère:
+                         </td>
+                         <td>
+                           {{ citoyen?.nom_mere }}
+                         </td>
+                       </tr>
+                       <tr>
+                         <td>
+                          Prénom de la mère	: 
+                         </td>
+                         <td>
+                           {{ citoyen?.prenom_mere }}
+                         </td>
+                       </tr>
+                     </table>           
+                     </ng-template>                                                
+                 </ngb-tab>
+             </ngb-tabset>
+           </td>      
+           
+
+          <td>
+            <ngb-tabset  [justify]="'center'" class="text-center" >
+               <ngb-tab> 
+                 <ng-template ngbTabTitle>
+                   <table style="color: black;">
+                     <tr>
+                       <td>
+                        Date de naissance	:
+                       </td>
+                       <td>
+                         {{ citoyen?.date_de_naissance }}
+                       </td>
+                     </tr>
+                     <tr>
+                       <td>
+                        Numéro de la carte d’identité nationale	:
+                       </td>
+                       <td>
+                         {{ citoyen?.cin }}
+                       </td>
+                     </tr>
+                     <tr>
+                       <td>
+                        Email: 
+                       </td>
+                       <td>
+                         {{ citoyen?.email }}
+                       </td>
+                     </tr>
+                     <tr>
+                      <td>
+                       Numéro de téléphone: 
+                      </td>
+                      <td>
+                        {{ citoyen?.numtel }}
+                      </td>
+                    </tr> 
+                   </table>           
+                   </ng-template>                                                
+               </ngb-tab>
+           </ngb-tabset>
+         </td> 
+           </tr>
+        </table>
+        <table *ngIf="actenaiss"  style=" margin: 0 auto;"cellpadding="15"> 
+ 
+          <tr>   
+            <td>
+                <ngb-tabset  [justify]="'center'" class="text-center" >
+                   <ngb-tab> 
+                     <ng-template ngbTabTitle>
+                       <table style="color: black;">
+                         <tr>
+                           <td>
+                            Commune de naissance:
+                           </td>
+                           <td>
+                             {{ citoyen?.commune_de_naissance }}
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>
+                            Arrondissement de naissance:
+                           </td>
+                           <td>
+                             {{ citoyen?.arrondissement_de_naissance }}
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>
+                            Numéro acte de naissance	: 
+                           </td>
+                           <td>
+                             {{ citoyen?.numero_acte_de_naissance }}
+                           </td>
+                         </tr>
+                       </table>           
+                       </ng-template>                                                
+                   </ngb-tab>
+               </ngb-tabset>
+             </td>      
+            
+     
+               <td>
+                   <ngb-tabset  [justify]="'center'" class="text-center" >
+                      <ngb-tab> 
+                        <ng-template ngbTabTitle>
+                          <table style="color: black;">
+                            <tr>
+                              <td>
+                                Année de naissance:
+                              </td>
+                              <td>
+                                {{ citoyen?.annee_de_naissance }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Numéro de la carte d’identité nationale:
+                              </td>
+                              <td>
+                                {{ citoyen?.cin }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Situation familiale	: 
+                              </td>
+                              <td>
+                                {{ citoyen?.situation_familiale }}
+                              </td>
+                            </tr>
+                            
+                          </table>           
+                          </ng-template>                                                
+                      </ngb-tab>
+                  </ngb-tabset>
+                </td>      
+                
+     
+               <td>
+                 <ngb-tabset  [justify]="'center'" class="text-center" >
+                    <ngb-tab> 
+                      <ng-template ngbTabTitle>
+                        <table style="color: black;">
+                          <tr>
+                            <td>
+                              Date de la situation familiale	:
+                            </td>
+                            <td>
+                              {{ citoyen?.date_de_la_situation_familiale }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              IUC du conjoint:
+                            </td>
+                            <td>
+                              {{ citoyen?.iuc_du_conjoint }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              IUC du père: 
+                            </td>
+                            <td>
+                              {{ citoyen?.iuc_du_pere }}
+                            </td>
+                          </tr>
+                          <tr>
+                           <td>
+                            IUC de la mère: 
+                           </td>
+                           <td>
+                             {{ citoyen?.iuc_de_la_mere }}
+                           </td>
+                         </tr> 
+                        </table>           
+                        </ng-template>                                                
+                    </ngb-tab>
+                </ngb-tabset>
+              </td> 
+                </tr>
+             </table>
+           
+
+             <table *ngIf="dnaddr"  style=" color: #000; margin: 0 auto;"cellpadding="15"> 
+ 
+              <tr>   
+                <td>
+                    <ngb-tabset  [justify]="'center'" class="text-center" >
+                       <ngb-tab> 
+                         <ng-template ngbTabTitle>
+                           <table style="color: black;">
+                             <tr>
+                               <td>
+                                Gouvernorat adress:
+                               </td>
+                               <td>
+                                {{citoyen?.gouvernorat.gouvernorat}}
+                               </td>
+                             </tr>
+                             <tr>
+                               <td>
+                                Délégation adresse:
+                               </td>
+                               <td>
+                                {{ citoyen?.delegation.delegation }}
+                               </td>
+                             </tr>
+                             <tr>
+                               <td>
+                                Localité adresse	: 
+                               </td>
+                               <td>
+                                {{ citoyen?.localite.localite}}
+                               </td>
+                             </tr>
+                             <tr>
+                              <td>
+                                Adresse déclarée: 
+                              </td>
+                              <td>
+                                {{ citoyen?.adresse }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Code postale: 
+                              </td>
+                              <td>
+                                {{ citoyen?.code_postal }}
+                              </td>
+                            </tr>
+                           </table>           
+                           </ng-template>                                                
+                       </ngb-tab>
+                   </ngb-tabset>
+                 </td>      
+                    </tr>
+                 </table> 
 
 
+
+
+
+
+                 <table  *ngIf="actedeces"  style="  margin: 0 auto;"cellpadding="15"> 
+ 
+                  <tr>   
+                    <td>
+                        <ngb-tabset  [justify]="'center'" class="text-center" >
+                           <ngb-tab> 
+                             <ng-template ngbTabTitle>
+                               <table style="color: black;">
+                                 <tr>
+                                   <td>
+                                    Commune de décès:
+                                   </td>
+                                   <td>
+                                    {{ citoyen?.commune_de_deces}}
+                                   </td>
+                                 </tr>
+                                 <tr>
+                                   <td>
+                                    Année acte de décès:
+                                   </td>
+                                   <td>
+                                    {{ citoyen?.annee_acte_de_deces }}
+                                   </td>
+                                 </tr>
+                                 <tr>
+                                   <td>
+                                    Arrondissement décès :
+                                  	 
+                                   </td>
+                                   <td>
+                                    {{ citoyen?.arrondissement_deces }}
+                                   </td>
+                                 </tr>
+                                 <tr>
+                                  <td>
+                                    Numéro acte de décès: 
+                                  </td>
+                                  <td>
+                                    {{ citoyen?.numero_acte_de_deces }}
+                                  </td>
+                                </tr>
+                                 
+                               </table>           
+                               </ng-template>                                                
+                           </ngb-tab>
+                       </ngb-tabset>
+                     </td>      
+                        </tr>
+                     </table> 
