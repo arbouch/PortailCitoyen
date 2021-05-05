@@ -27,6 +27,11 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-detail-papier.component';
 import { Testv3Component } from './testv3/testv3.component';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
+import { DecideurloginComponent } from "./decideur/decideurlogin/decideurlogin.component";
+ 
+
+import { DecideurComponent } from './decideur/decideur.component';
+ import { DecideurDashbordComponent } from './decideur/decideur-dashbord/decideur-dashbord.component';
 
 @NgModule({
     declarations: [
@@ -42,7 +47,10 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
         UtilisationSiteCitComponent,
         OTPverificationComponent,
         CitoyenDetailPapierComponent,
-        Testv3Component
+        Testv3Component,
+        DecideurloginComponent,
+        DecideurDashbordComponent,
+        DecideurComponent
 
 
         
@@ -56,7 +64,9 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
         ComponentsModule,
         ExamplesModule,HttpClientModule,NgxPaginationModule,ToastrModule.forRoot(),
         NgxQRCodeModule,
-        RecaptchaV3Module
+        RecaptchaV3Module,  
+       
+
     ],
     providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: "6Le5Zq4aAAAAABl4d-HnsCBlk1bWHt1iIX6ryTGE" }],
     bootstrap: [AppComponent]

@@ -18,13 +18,17 @@ import { UpdatecitoyenComponent } from './updatecitoyen/updatecitoyen.component'
 import { UtilisationSiteCitComponent } from './utilisation-site-cit/utilisation-site-cit.component';
 import { SignaleComponent } from './signale/signale.component';
 import { CitoyenDetailPapierComponent } from './citoyen-detail-papier/citoyen-detail-papier.component';
-
+import { DecideurloginComponent } from "./decideur/decideurlogin/decideurlogin.component";
+import { DecideurDashbordComponent } from "./decideur/decideur-dashbord/decideur-dashbord.component";
+import { DecideurComponent } from './decideur/decideur.component';
 import { Testv3Component } from './testv3/testv3.component';
 
 
 const routes: Routes =[
     { path: 'v3',component: Testv3Component },
-
+    { path: 'decideurlogin',component:  DecideurloginComponent},
+    { path: 'dashbord',component: DecideurDashbordComponent },
+    { path: 'dashborddecideur',component: DecideurComponent },
       { path: 'nucleoicons',component: NucleoiconsComponent },
      { path: 'examples/landing',component: LandingComponent },
      { path: 'examples/profile',component: ProfileComponent },
@@ -46,7 +50,7 @@ const routes: Routes =[
 
 @NgModule({
     imports: [
-     CommonModule,
+  CommonModule,
         BrowserModule,
         RouterModule.forRoot(routes)
     ],
