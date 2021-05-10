@@ -61,23 +61,23 @@ export class UtilisationSiteCitComponent implements OnInit {
           public  sendss(id_util_site_cit : number,cin : string):void{
             Swal.fire({
               title: 'Êtes-vous sûr?              ',
-              text: 'You will not be able to recover this imaginary file!',
+              text: 'Votre signalement sera prise en considération!',
               icon: 'warning',
               showCancelButton: true,
-              confirmButtonText: 'Yes, delete it!',
-              cancelButtonText: 'No, keep it'
+              confirmButtonText: 'Oui,Envoyer',
+              cancelButtonText: 'Non, Annuler'
             }).then((result) => {
               if (result.value) {
                 Swal.fire(
                   'Envoyé!',
-                  'Votre Demande est Envoyé au ......',
+                  'Votre Demande est  envoyée aux  instances  spécialisées ',
                   'success'
 
                    )
                } else if (result.dismiss === Swal.DismissReason.cancel) {
                 Swal.fire(
-                  'Cancelled',
-                  'Your imaginary file is safe :)',
+                  'Annnulé',
+                  'vous avez annulé votre signalement ',
                   'error'
                 )
               }

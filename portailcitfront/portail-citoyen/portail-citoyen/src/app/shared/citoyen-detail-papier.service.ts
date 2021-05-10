@@ -16,6 +16,9 @@ export class CitoyenDetailPapierService {
   public getqrbyCin(cintemp: string): Observable<any>{
     return this.http.get("http://localhost:81/citoyen/detailpapier/"+cintemp)
   }
+  public sendtirage(cin): Observable<string>{
+    return this.http.post<string>("http://localhost:81/tirage/addtirage/"+cin,{})
+  }
 
-  
+   
 }

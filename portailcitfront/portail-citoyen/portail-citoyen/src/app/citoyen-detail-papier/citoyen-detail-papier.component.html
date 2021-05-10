@@ -14,18 +14,20 @@
    <div class="col-md-10 ml-auto col-xl-6 mr-auto"  >
  <div>
     <div class="card" >
-     
-         
+  
+      <button class="btn btn-primary btn-round btn-lg btn-block" id="printbut"(click)="printPage(('document'))">Imprimer</button>
+
       <div class="nav-tabs-navigation"  >
           <div class="nav-tabs-wrapper" >
               <ngb-tabset  [justify]="'center'" class="text-center" >
-          
+                  
                   <ngb-tab> 
                
                     <ng-template ngbTabTitle>
                       <table  id=doc>          
                         <tr>
                           <td>
+                            
                         <div class="qr" style="width: 50%">
                                       <ngx-qrcode 
                                 [elementType]="elementType"
@@ -37,7 +39,8 @@
                             <td>
                               <img src="./../../assets/imageang/armoirie.png">
                               <p>
-                                Ministère de l'Intérieur Tunisien
+                                الجمهورية التونسية | وزارة الداخلية
+
                               </p>
                             </td>
                           </tr>
@@ -166,7 +169,6 @@
       </div>
     </div>
    </div>
-  <button (click)="printPage(('document'))">Download</button>
   
 </div>
 

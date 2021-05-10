@@ -12,15 +12,33 @@
           <span class="sr-only" id="loading"></span> 
       </div> 
   </div> 
-      <div class="header header-primary text-center">
-          <div class="category">
-              <img src="../../assets/imageang/img2.jpg" style ="width:20%; height:20%;" >
-          </div>
+  <div class="row">
+
+      <div class="text-center col-md-6" style="    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+  ">
+      
+              <img src="../../assets/imageang/img1.jpg" style = " height:80%;" >
+        
+          
+           
       </div>
-      <h5 >Numéro de Téléphone:</h5>
+     
 
-      <div class="content">
-
+      <div class="content col-md-5">
+        <div class="header header-primary text-center">
+          <div class="category">
+              <img src="../../assets/imageang/img2.jpg" style ="width:40%;" >
+          </div>
+          
+          <a target="_self"  [routerLink]="['../decideurlogin']"  class="nav-link">
+            <p>se connecter en tant que decideur</p>
+          </a>
+      </div>
+        <h5 >Numéro de Téléphone:</h5>
         <div class="input-group form-group-no-border input-lg" >
 
           <div class="input-group-prepend">
@@ -40,12 +58,14 @@
           </div>
           <input   required type="number" class="form-control"  placeholder="12345678" name="cin" [(ngModel)]="user.cin">
         </div>
-      </div>
-      <div class="footer text-center">
-          <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Login </button>
+        <div class=" text-center">
+          <button type="submit"  class="btn btn-primary btn-round btn-lg btn-block">Login </button>
            
       </div>
-    
+      </div>
+      
+    </div>
+
       
   </form>
 </div>

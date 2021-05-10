@@ -20,7 +20,7 @@
          </div>
       </div>
         <div class="navbar-translate">
-            <a class="navbar-brand" [routerLink]="['/detailscitoyens']" placement="bottom" ngbTooltip="Designed by Invision. Coded by Creative Tim">
+            <a class="navbar-brand"  placement="bottom" ngbTooltip="Designed by Invision. Coded by Creative Tim">
                Portail Citoyen
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" >
@@ -32,19 +32,19 @@
         <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a target="_self"  [routerLink]="['../detailscitoyens']"  class="nav-link">
+                  <a target="_self"  (click)="changerdashboardreclamation()" class="nav-link">
                       <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                       <p>Dashbord Reclamation</p>
                   </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" target="_self"  [routerLink]="['../update']">
+                <a class="nav-link" target="_self" (click)="changerdashboardsignalements()" >
                     <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                     <p>Dashbord Signalement</p>
                 </a>
             
             <li class="nav-item">
-              <a  class="nav-link"  target="_self" [routerLink]="['../']">
+              <a  class="nav-link"  target="_self" [routerLink]="['../decideurlogin']">
                 <i class="now-ui-icons files_paper"></i>
                 <p>Quitter</p>
               </a>
@@ -55,6 +55,8 @@
         </div>
     </div>
 </nav>
-<div style="margin-top: 3cm;">
-<iframe src="http://localhost:5601/app/dashboards#/view/844ac7b0-abac-11eb-93d1-3b497edbe568?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))&hide-filter-bar=true" height="600" width="1500"></iframe>
+<div *ngIf="signale" style="margin-top: 1.8cm;">
+<iframe src="http://localhost:5601/app/dashboards#/view/844ac7b0-abac-11eb-93d1-3b497edbe568?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))&hide-filter-bar=true" height="600" width="1350"></iframe>
 </div>
+<div *ngIf="reclamation" style="margin-top: 1.8cm;">
+  <iframe src="http://localhost:5601/goto/82f2cc53444eeb5ba226a6fd38720088" height="600" width="1400"></iframe>  </div>

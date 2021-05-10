@@ -20,6 +20,8 @@ export class DecideurloginComponent implements OnInit {
   constructor(private http:HttpClient,private router: Router,private service: DecideurService) { }
 
   ngOnInit(): void {
+    sessionStorage.setItem("emaildecideur",null)
+ 
   }
   decideurlogin(){
     
@@ -30,7 +32,9 @@ export class DecideurloginComponent implements OnInit {
             this.showspinner=false; 
        } 
        console.log("response received");
-        this.router.navigate(['/dashbord'])
+        this.router.navigate(['/dashbord']);
+        sessionStorage.setItem("emaildecideur",this.decideur.emailDecideur.toString())
+         
         }
    
        ,error=>{console.log("exception occured"); this.showspinner=false;

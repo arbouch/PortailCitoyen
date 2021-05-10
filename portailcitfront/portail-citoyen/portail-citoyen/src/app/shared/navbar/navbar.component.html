@@ -2,33 +2,14 @@
     <div class="container">
       <div class="dropdown button-dropdown">
         <div ngbDropdown>
-          <a class="dropdown-toggle" ngbDropdownToggle>
-              <span class="button-bar"></span>
-              <span class="button-bar"></span>
-              <span class="button-bar"></span>
-          </a>
-           <div ngbDropdownMenu>
-             <a class="dropdown-header">Dropdown header</a>
-             <a class="dropdown-item" href="#">Action</a>
-             <a class="dropdown-item" href="#">Another action</a>
-             <a class="dropdown-item" href="#">Something else here</a>
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">Separated link</a>
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">One more separated link</a>
-           </div>
+          <div style="width: 30px;"> 
+         <img src="./.././../../assets/imageang/armoirie.png">
+        </div>
          </div>
       </div>
-        <div class="navbar-translate">
-            <a class="navbar-brand" [routerLink]="['/detailscitoyens']" placement="bottom" ngbTooltip="Designed by Invision. Coded by Creative Tim">
-               Portail Citoyen
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-            </button>
-        </div>
+      
+       <p style="color: blanchedalmond;"> Portail Citoyen</p>
+   
         <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
@@ -39,33 +20,38 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" target="_self"  [routerLink]="['../update']">
-                    <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-                    <p>Mise A jour Des Données</p>
+                    <i class="now-ui-icons arrows-1_refresh-69"></i>
+                    <p>Mise A jour  Données</p>
                 </a>
             </li>
                 <li class="nav-item">
                     <a target="_self"  [routerLink]="['../utilisation_site_cit']" class="nav-link">
-                      <i class="now-ui-icons files_paper"></i>
+                      <i class="now-ui-icons ui-1_lock-circle-open"></i>
                       <p>Manip De Données</p>
                     </a>
                 </li>
                 <li class="nav-item">
                   <a  target="_self" class="nav-link" [routerLink]="['../mesreclamation']"  >
-                    <i class="now-ui-icons files_paper"></i>
-                    <p>Gestion Reclamations</p>
+                    <i class="now-ui-icons ui-1_send"></i>
+                    <p> Reclamations</p>
                   </a>
               </li>
               
-
+              <li class="nav-item">
+                <a  target="_self" class="nav-link" [routerLink]="['../papier']"  >
+                  <i class="now-ui-icons business_badge"></i>
+                  <p>pièce d'identité</p>
+                </a>
+            </li>
               <li class="nav-item">
                 <a  target="_self" class="nav-link" [routerLink]="['../messignale']"  >
-                  <i class="now-ui-icons files_paper"></i>
+                  <i class="now-ui-icons ui-1_settings-gear-63"></i>
                   <p>Signalement</p>
                 </a>
             </li>
             <li class="nav-item">
               <a  class="nav-link"  target="_self" [routerLink]="['../']">
-                <i class="now-ui-icons files_paper"></i>
+                <i class="now-ui-icons objects_key-25"></i>
                 <p>Quitter</p>
               </a>
            </li>

@@ -78,6 +78,22 @@ cintemp : string="";
   }
   printPage(cmpName) {
    // window.print();
+   this.service.sendtirage(this.cintemp).subscribe(
+    data=> {
+      if (data) { 
+         this.showspinner=false; 
+    } 
+    console.log("response received");
+     }
+
+    ,error=>{console.log("exception occured"); this.showspinner=false;
+    this.erreur=true;
+    }
+   
+
+    )
+    
+
    let printContents = document.getElementById(cmpName).innerHTML;
    let originalContents = document.body.innerHTML;
 
@@ -87,17 +103,7 @@ cintemp : string="";
 
    document.body.innerHTML = originalContents;
 }
-  download(){
-    var element = document.getElementById('document')
-    html2canvas(element).then((canvas)=> {
-      console.log(canvas)
-      var imgData=canvas.toDataURL('image/png')
-      var doc =new jsPDF()
-      var imgHeight=canvas.height*208 / canvas.width;
-      doc.addImage(imgData,0,0,208,imgHeight)
-      doc.save("document")
-    })
-  }
+ 
   
  
 }
